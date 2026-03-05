@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAMOUN COMPANY XAUUSD - Trader Marocain</title>
-    <!-- Tailwind CSS for Styling -->
+    <!-- Tailwind CSS pour le style -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
+    <!-- Icônes Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #05070a; color: #e2e8f0; }
+        body { font-family: 'Inter', sans-serif; background-color: #05070a; color: #e2e8f0; position: relative; }
         .font-serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+        
+        /* Animation du bandeau défilant */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -22,20 +24,77 @@
             animation: marquee 30s linear infinite;
             width: fit-content;
         }
+
+        /* Dégradé Or */
         .gold-gradient {
             background: linear-gradient(to right, #fde68a, #f59e0b, #b45309);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
         html { scroll-behavior: smooth; }
-        /* Image Modal Styles */
+
+        /* Styles du Modal d'Image */
         #modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
         #modal.active { display: flex; }
+
+        /* Style Bouton Diamant (Pack Pro) */
+        .diamond-btn {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+            color: #0369a1;
+            box-shadow: 0 0 20px rgba(186, 230, 253, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .diamond-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9), transparent);
+            transform: rotate(30deg);
+            animation: diamond-shine 3s infinite;
+        }
+        @keyframes diamond-shine {
+            0% { left: -150%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
+        }
+        .diamond-btn:hover {
+            box-shadow: 0 0 30px rgba(186, 230, 253, 0.8);
+            transform: scale(1.02);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        /* Particules d'Or en arrière-plan */
+        .gold-piece {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+            background: linear-gradient(135deg, #fbbf24, #b45309);
+            border-radius: 2px;
+            opacity: 0.4;
+            filter: blur(1px);
+            animation: float-gold linear infinite;
+        }
+
+        @keyframes float-gold {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Image Modal (Lightbox) -->
+    <!-- Fond de particules d'or (généré par JS) -->
+    <div id="gold-particles-container"></div>
+
+    <!-- Modal d'Image (Lightbox) -->
     <div id="modal" onclick="closeModal()">
         <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all">
             <i data-lucide="x" class="w-8 h-8"></i>
@@ -43,7 +102,7 @@
         <img id="modal-img" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="" alt="Plein écran">
     </div>
 
-    <!-- Top Market Ticker -->
+    <!-- Ticker de Marché -->
     <div class="bg-amber-500 text-black py-2 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
         <div class="animate-marquee font-black text-[10px] uppercase tracking-widest flex items-center space-x-12">
             <span>XAU/USD 2,042.50 <span class="text-emerald-900">▲ +1.24%</span></span>
@@ -51,7 +110,7 @@
             <span>GBP/USD 1.2631 <span class="text-emerald-900">▲ +0.42%</span></span>
             <span>USD/MAD 10.05 <span class="text-emerald-900">▲ +0.08%</span></span>
             <span>XAG/USD 22.84 <span class="text-rose-900">▼ -0.88%</span></span>
-            <!-- Repeat for loop -->
+            <!-- Répétition pour boucle infinie -->
             <span>XAU/USD 2,042.50 <span class="text-emerald-900">▲ +1.24%</span></span>
             <span>EUR/USD 1.0842 <span class="text-rose-900">▼ -0.15%</span></span>
             <span>GBP/USD 1.2631 <span class="text-emerald-900">▲ +0.42%</span></span>
@@ -72,8 +131,8 @@
                 </span>
             </div>
             <div class="hidden lg:flex items-center space-x-8">
-                <a href="#home" class="text-sm font-bold hover:text-amber-500 transition-colors uppercase tracking-widest">Accueil</a>
                 <a href="#packs" class="text-sm font-bold hover:text-amber-500 transition-colors uppercase tracking-widest">Packs</a>
+                <a href="#home" class="text-sm font-bold hover:text-amber-500 transition-colors uppercase tracking-widest">À Propos</a>
                 <a href="#resultats" class="text-sm font-bold hover:text-amber-500 transition-colors uppercase tracking-widest">Résultats</a>
                 <a href="https://instagram.com/mamouncompany_officiel" target="_blank" class="text-white hover:text-amber-500 transition-colors">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
@@ -87,9 +146,55 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-52 pb-32 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-amber-500/10 blur-[120px] rounded-full -z-10"></div>
+    <!-- Section Packs (En Haut) -->
+    <section id="packs" class="relative pt-52 pb-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Nos Offres Exclusives</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-white">Choisissez Votre Niveau d'Excellence</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- PACK PRO - BOUTON DIAMANT -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] flex flex-col hover:border-sky-400 transition-all backdrop-blur-sm">
+                    <h4 class="text-2xl font-black mb-2 uppercase">PACK PRO</h4>
+                    <p class="text-sky-400 font-bold mb-6 italic">2 ans d'abonnement</p>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Group Signaux VIP</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Formation Complète 🔥</li>
+                        <li class="opacity-30 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5"></i> Assistance Privée</li>
+                    </ul>
+                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20Pack%20Pro" class="diamond-btn block text-center py-4 rounded-xl font-black uppercase tracking-widest transition-all">S'abonner Maintenant</a>
+                </div>
+                <!-- PACK ACCOUNT MANAGEMENT (ROUGE) -->
+                <div class="bg-red-950/20 border-2 border-red-600/50 p-8 rounded-[40px] flex flex-col hover:border-red-500 transition-all shadow-xl shadow-red-900/10 backdrop-blur-sm">
+                    <h4 class="text-2xl font-black mb-2 uppercase">ACCOUNT MANAGEMENT</h4>
+                    <p class="text-red-500 font-black text-xl mb-6">3500 DH / 6 MOIS</p>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 font-black text-red-500 uppercase"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Capital</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Analyse & Optimisation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Support Dédié</li>
+                    </ul>
+                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20pack%20Account%20Management" class="block text-center bg-red-600 py-4 rounded-xl font-black uppercase tracking-widest text-white hover:bg-red-700 transition-all shadow-lg">Démarrer la Gestion</a>
+                </div>
+                <!-- PACK VIP (OR) -->
+                <div class="bg-amber-500/5 border-2 border-amber-500 p-8 rounded-[40px] flex flex-col relative shadow-2xl shadow-amber-500/10 backdrop-blur-sm">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">OFFRE ELITE</div>
+                    <h4 class="text-2xl font-black mb-2 uppercase">PACK VIP</h4>
+                    <p class="text-amber-500 font-bold mb-6 italic uppercase">Abonnement Lifetime</p>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Groupe Signaux (À Vie)</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Formation Premium</li>
+                        <li class="flex items-center gap-3 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20 text-amber-400 text-sm font-black uppercase tracking-widest"><i data-lucide="shield-check" class="w-4 h-4"></i> Assistance Privée</li>
+                    </ul>
+                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20groupe%20vip" class="block text-center bg-amber-500 py-4 rounded-xl font-black uppercase tracking-widest text-black hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">Devenir VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos (Mamoun + Communauté Gold) -->
+    <section id="home" class="relative py-24">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
                 <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold tracking-widest text-amber-500 uppercase">
@@ -101,10 +206,10 @@
                 </div>
                 
                 <div class="space-y-4">
-                    <h2 class="text-amber-500 font-black text-2xl tracking-widest uppercase">MAMOUN COMPANY XAUUSD</h2>
+                    <h2 class="text-amber-500 font-black text-2xl tracking-widest uppercase">MAMOUN – TRADER MAROCAIN</h2>
                     <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight">
                         Spécialiste du trading sur <br />
-                        <span class="gold-gradient">XAUUSD / GOLD</span>
+                        <span class="gold-gradient text-white">XAUUSD / GOLD</span>
                     </h1>
                 </div>
 
@@ -127,19 +232,16 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 pt-6">
+                <div class="pt-6">
                     <a href="https://wa.me/212612510935?text=Bonjour%20Mamoun,%20je%20veux%20rejoindre%20ton%20groupe%20privé." 
                        class="bg-white text-black px-10 py-5 rounded-2xl font-black text-lg hover:bg-amber-500 transition-all flex items-center justify-center space-x-3 shadow-xl">
                         <span>Accès Groupe Privé</span>
                         <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="#resultats" class="border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/5 transition-all text-center">
-                        Voir les Gains
-                    </a>
                 </div>
             </div>
 
-            <!-- Content Card -->
+            <!-- Carte Communauté Gold -->
             <div class="relative">
                 <div class="bg-[#0a0c10] border border-white/10 rounded-[40px] p-8 shadow-3xl shadow-amber-900/10 overflow-hidden relative">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 blur-3xl rounded-full"></div>
@@ -170,54 +272,7 @@
         </div>
     </section>
 
-    <!-- Packs Section -->
-    <section id="packs" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Nos Offres Exclusives</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white">Choisissez Votre Niveau d'Excellence</h3>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- PACK PRO -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] flex flex-col hover:border-amber-500 transition-all">
-                    <h4 class="text-2xl font-black mb-2">PACK PRO</h4>
-                    <p class="text-amber-500 font-bold mb-6 italic">2 ans d'abonnement</p>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Group Signaux VIP</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Formation Complète 🔥</li>
-                        <li class="opacity-30 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5"></i> Assistance Privée</li>
-                    </ul>
-                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20Pack%20Pro" class="block text-center bg-white/10 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-all">S'abonner Maintenant</a>
-                </div>
-                <!-- PACK ACCOUNT MANAGEMENT -->
-                <div class="bg-red-950/20 border-2 border-red-600/50 p-8 rounded-[40px] flex flex-col hover:border-red-500 transition-all shadow-xl shadow-red-900/10">
-                    <h4 class="text-2xl font-black mb-2">ACCOUNT MANAGEMENT</h4>
-                    <p class="text-red-500 font-black text-xl mb-6">3500 DH / 6 MOIS</p>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-3 font-black text-red-500 uppercase"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Capital</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Analyse & Optimisation</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Support Dédié</li>
-                    </ul>
-                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20pack%20Account%20Management" class="block text-center bg-red-600 py-4 rounded-xl font-black uppercase tracking-widest text-white hover:bg-red-700 transition-all shadow-lg">Démarrer la Gestion</a>
-                </div>
-                <!-- PACK VIP -->
-                <div class="bg-amber-500/5 border-2 border-amber-500 p-8 rounded-[40px] flex flex-col relative shadow-2xl shadow-amber-500/10">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">OFFRE ELITE</div>
-                    <h4 class="text-2xl font-black mb-2">PACK VIP</h4>
-                    <p class="text-amber-500 font-bold mb-6 italic uppercase">Abonnement Lifetime</p>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Groupe Signaux (À Vie)</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Formation Premium</li>
-                        <li class="flex items-center gap-3 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20 text-amber-400 text-sm font-black uppercase tracking-widest"><i data-lucide="shield-check" class="w-4 h-4"></i> Assistance Privée</li>
-                    </ul>
-                    <a href="https://wa.me/212612510935?text=Je%20veux%20le%20groupe%20vip" class="block text-center bg-amber-500 py-4 rounded-xl font-black uppercase tracking-widest text-black hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">Devenir VIP</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Gallery Section -->
+    <!-- Galerie des Résultats -->
     <section id="resultats" class="py-24 bg-[#0a0c10]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -230,7 +285,7 @@
                 <p class="text-slate-500 max-w-sm">Cliquez sur les photos pour les voir en entier. Voici la preuve de nos stratégies.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Image Cards -->
+                <!-- Cartes Image -->
                 <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')">
                     <img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105" alt="Gains Mars">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
@@ -265,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Risk Warning -->
+    <!-- Avertissement des Risques -->
     <section class="py-12 bg-black border-t-2 border-amber-900/30">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <i data-lucide="alert-triangle" class="w-12 h-12 text-amber-500 mx-auto mb-4"></i>
@@ -276,7 +331,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Pied de page -->
     <footer class="bg-black py-20 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
@@ -286,7 +341,7 @@
                         <span class="text-2xl font-black text-white uppercase tracking-tighter">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span>
                     </div>
                     <p class="text-slate-400 mb-6 font-bold uppercase tracking-widest text-xs">MAMOUN – TRADER MAROCAIN 🇲🇦</p>
-                    <p class="text-slate-500 max-w-md">Spécialiste XAUUSD / GOLD. Communauté de +10 000 membres actifs au Maroc et dans le monde.</p>
+                    <p class="text-slate-500 max-md">Spécialiste XAUUSD / GOLD. Communauté de +10 000 membres actifs au Maroc et dans le monde.</p>
                 </div>
                 <div>
                     <h5 class="text-white font-black uppercase text-sm mb-6">Contact & Social</h5>
@@ -316,10 +371,10 @@
     </footer>
 
     <script>
-        // Initialize Lucide icons
+        // Initialiser les icônes Lucide
         lucide.createIcons();
 
-        // Navbar scroll effect
+        // Effet de défilement de la Navbar
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (window.scrollY > 50) {
@@ -333,7 +388,7 @@
             }
         });
 
-        // Image Modal Logic
+        // Logique du Modal d'Image
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
 
@@ -347,6 +402,34 @@
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+
+        // Générer des particules d'or flottantes
+        function createGoldPieces() {
+            const container = document.getElementById('gold-particles-container');
+            const count = 25; // Nombre de pièces
+            
+            for (let i = 0; i < count; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'gold-piece';
+                
+                // Position aléatoire
+                const startX = Math.random() * 100;
+                const size = Math.random() * 6 + 2; // Taille entre 2px et 8px
+                const duration = Math.random() * 20 + 10; // Durée entre 10s et 30s
+                const delay = Math.random() * 20; // Délai aléatoire
+                
+                piece.style.left = `${startX}vw`;
+                piece.style.bottom = `-10px`;
+                piece.style.width = `${size}px`;
+                piece.style.height = `${size}px`;
+                piece.style.animationDuration = `${duration}s`;
+                piece.style.animationDelay = `${-delay}s`;
+                
+                container.appendChild(piece);
+            }
+        }
+
+        createGoldPieces();
     </script>
 </body>
 </html>

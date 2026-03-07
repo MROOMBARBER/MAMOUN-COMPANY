@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAMOUN COMPANY XAUUSD - KING OF GOLD</title>
     
-    <!-- Meta Tags pour le Link Preview (WhatsApp, FB, etc.) -->
+    <!-- Meta Tags pour le Link Preview (WhatsApp, Instagram, etc.) -->
     <meta property="og:title" content="MAMOUN COMPANY XAUUSD - KING OF GOLD">
     <meta property="og:description" content="Spécialiste XAUUSD / GOLD. Rejoignez la référence Gold au Maroc. Stratégie 100% Or.">
     <meta property="og:image" content="https://i.postimg.cc/HkRHwKXt/photo-5859575830298692928-y.jpg">
     <meta property="og:url" content="https://mamouncompany.ma">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.postimg.cc/HkRHwKXt/photo-5859575830298692928-y.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/W4kZ8GZd/IMG-8545.jpg">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <!-- Icônes Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #05070a; color: #e2e8f0; position: relative; }
         
-        /* Animation du bandeau défilant */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -36,7 +33,6 @@
             width: fit-content;
         }
 
-        /* Dégradé Or */
         .gold-gradient {
             background: linear-gradient(to right, #fde68a, #f59e0b, #b45309);
             -webkit-background-clip: text;
@@ -45,66 +41,42 @@
         
         html { scroll-behavior: smooth; }
 
-        /* Arrière-plan graphique de trading (Rouge et Vert) */
         .chart-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            opacity: 0.08;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Bullish Green --%3E%3Cline x1='40' y1='100' x2='40' y2='160' stroke='%2310b981' stroke-width='1' /%3E%3Crect x='36' y='110' width='8' height='40' fill='%2310b981' /%3E%3C!-- Bearish Red --%3E%3Cline x1='80' y1='120' x2='80' y2='190' stroke='%23ef4444' stroke-width='1' /%3E%3Crect x='76' y='135' width='8' height='45' fill='%23ef4444' /%3E%3C!-- Bullish Green --%3E%3Cline x1='120' y1='60' x2='120' y2='130' stroke='%2310b981' stroke-width='1' /%3E%3Crect x='116' y='75' width='8' height='45' fill='%2310b981' /%3E%3C!-- Bearish Red --%3E%3Cline x1='160' y1='90' x2='160' y2='150' stroke='%23ef4444' stroke-width='1' /%3E%3Crect x='156' y='100' width='8' height='40' fill='%23ef4444' /%3E%3C!-- Bullish Green --%3E%3Cline x1='200' y1='40' x2='200' y2='100' stroke='%2310b981' stroke-width='1' /%3E%3Crect x='196' y='55' width='8' height='35' fill='%2310b981' /%3E%3C/svg%3E");
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2; opacity: 0.08; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='40' y1='100' x2='40' y2='160' stroke='%2310b981' stroke-width='1' /%3E%3Crect x='36' y='110' width='8' height='40' fill='%2310b981' /%3E%3Cline x1='80' y1='120' x2='80' y2='190' stroke='%23ef4444' stroke-width='1' /%3E%3Crect x='76' y='135' width='8' height='45' fill='%23ef4444' /%3E%3C/svg%3E");
             background-size: 480px;
             animation: move-bg 80s linear infinite;
         }
 
-        @keyframes move-bg {
-            from { background-position: 0 0; }
-            to { background-position: 480px 480px; }
-        }
+        @keyframes move-bg { from { background-position: 0 0; } to { background-position: 480px 480px; } }
 
-        /* Modal d'image */
         .modal-overlay { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; backdrop-blur: 8px; }
         .modal-overlay.active { display: flex; }
 
-        /* Particules d'Or & Lingots */
         .gold-piece {
             position: fixed; pointer-events: none; z-index: -1;
             background: linear-gradient(135deg, #fbbf24, #b45309);
             border-radius: 2px; opacity: 0.3; filter: blur(1px);
             animation: float-gold linear infinite;
         }
-        .gold-bar-bg {
-            position: fixed; pointer-events: none; z-index: -1;
-            background: linear-gradient(135deg, #fde68a 0%, #f59e0b 50%, #b45309 100%);
-            box-shadow: inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.5);
-            border-radius: 2px; opacity: 0.2;
-            animation: float-gold linear infinite;
-        }
-
+        
         @keyframes float-gold {
             0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
             10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
             100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
 
-        #nav { transition: all 0.4s ease; }
         .payment-card { background: #0a0c10; border: 1px solid rgba(255,215,0,0.3); border-radius: 32px; padding: 24px; width: 100%; max-width: 450px; }
-        .arabic-text { font-size: 1.1rem; line-height: 1.8; }
+        .arabic-text { font-size: 1.15rem; line-height: 1.8; }
+        .page { transition: opacity 0.5s ease; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
     <div class="chart-bg"></div>
     <div id="gold-particles-container"></div>
-
-    <!-- Notification -->
-    <div id="copy-notif" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-2xl z-[200] opacity-0 transition-opacity pointer-events-none">
-        Numéro Copié ! ✅
-    </div>
 
     <!-- Modal Paiement -->
     <div id="payment-modal" class="modal-overlay" onclick="closePayment()">
@@ -115,302 +87,362 @@
                     <i data-lucide="x" class="w-5 h-5 text-slate-400"></i>
                 </button>
             </div>
+            
             <div class="space-y-4 mb-8">
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">RIB Attijari 🏦</span>
+                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest text-amber-500">RIB Attijari 🏦</span>
                         <button onclick="copyRIB('007780000171700030611856')" class="text-amber-500"><i data-lucide="copy" class="w-4 h-4"></i></button>
                     </div>
                     <p class="text-white font-mono text-sm">007780000171700030611856</p>
                 </div>
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">CIH BANK 🏦</span>
+                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest text-amber-500">CIH BANK 🏦</span>
                         <button onclick="copyRIB('3384121211006800')" class="text-amber-500"><i data-lucide="copy" class="w-4 h-4"></i></button>
                     </div>
                     <p class="text-white font-mono text-sm">3384121211006800</p>
                 </div>
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">RIB BMCE BANK 🏦</span>
+                        <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest text-amber-500">RIB BMCE BANK 🏦</span>
                         <button onclick="copyRIB('011794000051200000287247')" class="text-amber-500"><i data-lucide="copy" class="w-4 h-4"></i></button>
                     </div>
                     <p class="text-white font-mono text-sm">011794000051200000287247</p>
                 </div>
             </div>
-            <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl mb-6">
-                <p class="text-red-500 font-bold text-center text-sm" dir="rtl">المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
+
+            <!-- Message d'avertissement en rouge -->
+            <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl mb-6 text-center">
+                <p class="text-red-500 font-bold text-sm" dir="rtl">المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
             </div>
-            <a id="wa-link" href="#" target="_blank" class="block w-full bg-emerald-600 text-white py-4 rounded-xl text-center font-black uppercase text-sm flex items-center justify-center gap-2">
+
+            <a id="wa-link" href="#" target="_blank" class="block w-full bg-emerald-600 text-white py-4 rounded-xl text-center font-black uppercase text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/20">
                 <i data-lucide="message-circle" class="w-5 h-5"></i> Envoie le reçu à WhatsApp
             </a>
         </div>
     </div>
 
-    <!-- Modal Image -->
+    <!-- Modal Preview Image -->
     <div id="modal" class="modal-overlay" onclick="closeModal()">
-        <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full hover:bg-white/20"><i data-lucide="x" class="w-8 h-8"></i></button>
-        <img id="modal-img" class="max-w-full max-h-full object-contain rounded-lg" src="" alt="Plein écran">
+        <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full"><i data-lucide="x" class="w-8 h-8"></i></button>
+        <img id="modal-img" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="" alt="">
     </div>
 
-    <!-- Ticker Rouge -->
-    <div class="bg-red-600 text-white py-2.5 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
-        <div class="animate-marquee font-black text-[11px] uppercase tracking-[0.2em] flex items-center space-x-12">
-            <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-            <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-            <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-            <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-            <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-        </div>
-    </div>
-
-    <!-- Nav -->
-    <nav id="nav" class="fixed w-full z-50 top-10 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
-                    <i data-lucide="coins" class="text-black w-6 h-6"></i>
-                </div>
-                <span class="text-lg md:text-xl font-black text-white uppercase">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span>
-            </div>
-            <div class="hidden lg:flex items-center space-x-8 uppercase font-bold text-sm tracking-widest">
-                <a href="#packs" class="hover:text-amber-500 transition-colors">Packs</a>
-                <a href="#how-it-works" class="hover:text-amber-500 transition-colors">الشرح</a>
-                <a href="#resultats" class="hover:text-amber-500 transition-colors">Résultats</a>
-                <a href="https://wa.me/212612510935" class="bg-amber-500 text-black px-6 py-2.5 rounded-lg font-black text-xs">OUVRIR UN COMPTE</a>
+    <!-- Page Principale -->
+    <div id="main-page" class="page">
+        <!-- Ticker Rouge -->
+        <div class="bg-red-600 text-white py-2.5 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
+            <div class="animate-marquee font-black text-[11px] uppercase tracking-[0.2em] flex items-center space-x-12">
+                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
+                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
+                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
+                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
+                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
             </div>
         </div>
-    </nav>
 
-    <!-- Section Packs -->
-    <section id="packs" class="relative pt-52 pb-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Nos Offres Exclusives</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white italic" dir="rtl">واجد تطلع النيفو؟</h3>
+        <!-- Navigation -->
+        <nav id="nav" class="fixed w-full z-50 top-10 py-6">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+                        <i data-lucide="coins" class="text-black w-6 h-6"></i>
+                    </div>
+                    <span class="text-lg md:text-xl font-black text-white uppercase tracking-tighter">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8 uppercase font-bold text-sm tracking-widest">
+                    <a href="#packs" class="hover:text-amber-500 transition-colors">Packs</a>
+                    <a href="#how-it-works" class="hover:text-amber-500 transition-colors">الشرح</a>
+                    <a href="#resultats" class="hover:text-amber-500 transition-colors">Résultats</a>
+                    <button onclick="showCGV()" class="hover:text-amber-500 transition-colors italic underline">الشروط</button>
+                    <a href="https://wa.me/212612510935" class="bg-amber-500 text-black px-6 py-2.5 rounded-lg font-black text-xs transition-all hover:scale-105">OUVRIR UN COMPTE</a>
+                </div>
+                <button class="lg:hidden text-white" onclick="showCGV()"><i data-lucide="shield" class="w-6 h-6"></i></button>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- PACK PRO -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] flex flex-col hover:border-sky-400 transition-all">
-                    <h4 class="text-2xl font-black mb-1 uppercase">PACK PRO</h4>
-                    <div class="text-sky-400 font-black text-3xl mb-6">1700 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 2 ans</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow text-sm font-medium">
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Groupe Signaux VIP</li>
-                        <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Formation Or Complète 🔥</li>
-                        <li class="opacity-30 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5"></i> Assistance Privée</li>
-                    </ul>
-                    <button onclick="openPayment('Pack Pro (1700 DH)')" class="bg-sky-400 text-black py-4 rounded-xl font-black uppercase tracking-widest">S'abonner Maintenant</button>
-                </div>
-                <!-- PACK MGMT -->
-                <div class="bg-red-950/20 border-2 border-red-600/50 p-8 rounded-[40px] flex flex-col hover:border-red-500 shadow-xl">
-                    <h4 class="text-2xl font-black mb-1 uppercase">ACCOUNT MGMT</h4>
-                    <div class="text-red-500 font-black text-3xl mb-6">3500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 6 mois</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow text-sm font-medium">
-                        <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Support Dédié</li>
-                    </ul>
-                    <button onclick="openPayment('Gestion de compte (3500 DH)')" class="bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest">Démarrer la Gestion</button>
-                </div>
-                <!-- PACK VIP -->
-                <div class="bg-amber-500/5 border-2 border-amber-500 p-8 rounded-[40px] flex flex-col relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">OFFRE ELITE</div>
-                    <h4 class="text-2xl font-black mb-1 uppercase">PACK VIP</h4>
-                    <div class="text-amber-500 font-black text-3xl mb-6">2500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ À vie</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow text-sm font-medium">
-                        <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Groupe Signaux (À Vie)</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Formation Premium</li>
-                        <li class="flex items-center gap-3 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20 text-amber-400 text-xs font-black uppercase tracking-widest"><i data-lucide="shield-check" class="w-4 h-4"></i> Assistance Privée</li>
-                    </ul>
-                    <button onclick="openPayment('Pack VIP (2500 DH)')" class="bg-amber-500 text-black py-4 rounded-xl font-black uppercase tracking-widest">Devenir VIP</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Section الشرح (Darija) -->
-    <section id="how-it-works" class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-right mb-16" dir="rtl">
-                <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4">كيف نعمل؟</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6">شرح مفصل لخدماتنا</h3>
-                <div class="h-1.5 w-32 bg-amber-500 rounded-full"></div>
+        <!-- SECTION PACKS (TOP) -->
+        <section id="packs" class="relative pt-52 pb-24">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="mb-20">
+                    <h2 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Nos Offres Exclusives</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white italic" dir="rtl">واجد تطلع النيفو؟</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- PACK PRO -->
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] flex flex-col hover:border-sky-400 transition-all backdrop-blur-sm shadow-xl">
+                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK PRO</h4>
+                        <div class="text-sky-400 font-black text-3xl mb-6">1700 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 2 ans</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Groupe Signaux VIP</li>
+                            <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Formation Or Complète 🔥</li>
+                        </ul>
+                        <button onclick="openPayment('Pack Pro (1700 DH)')" class="bg-sky-400 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">S'abonner Maintenant</button>
+                    </div>
+                    <!-- PACK MGMT -->
+                    <div class="bg-red-950/20 border-2 border-red-600/50 p-8 rounded-[40px] flex flex-col hover:border-red-500 shadow-xl backdrop-blur-sm">
+                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter text-red-500">ACCOUNT MGMT</h4>
+                        <div class="text-red-500 font-black text-3xl mb-6">3500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 6 mois</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
+                            <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
+                        </ul>
+                        <button onclick="openPayment('Gestion de compte (3500 DH)')" class="bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">Démarrer la Gestion</button>
+                    </div>
+                    <!-- PACK VIP -->
+                    <div class="bg-amber-500/5 border-2 border-amber-500 p-8 rounded-[40px] flex flex-col relative backdrop-blur-sm shadow-2xl shadow-amber-500/10">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">OFFRE ELITE</div>
+                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK VIP</h4>
+                        <div class="text-amber-500 font-black text-3xl mb-6">2500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ À vie</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
+                            <li class="flex items-center gap-3 font-bold text-white"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Groupe Signaux (À Vie)</li>
+                            <li class="flex items-center gap-3 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20 text-amber-400 text-xs font-black uppercase tracking-widest">Assistance Privée</li>
+                        </ul>
+                        <button onclick="openPayment('Pack VIP (2500 DH)')" class="bg-amber-500 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">Devenir VIP</button>
+                    </div>
+                </div>
             </div>
-            <div class="grid lg:grid-cols-2 gap-12" dir="rtl">
-                <div class="space-y-6 text-right">
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-red-500/20 p-3 rounded-2xl text-red-500"><i data-lucide="briefcase"></i></div>
-                            <h4 class="text-2xl font-black text-white uppercase tracking-tighter">إدارة الحسابات (Account Management)</h4>
+        </section>
+
+        <!-- SECTION EXPLICATION (الشرح) -->
+        <section id="how-it-works" class="py-24 relative overflow-hidden bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-right mb-16" dir="rtl">
+                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">كيف نعمل؟</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 underline decoration-amber-500 decoration-4">شرح مفصل لخدماتنا</h3>
+                    <div class="h-1.5 w-32 bg-amber-500 rounded-full mr-0 ml-auto"></div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-8" dir="rtl">
+                    <div class="space-y-6 text-right">
+                        <!-- Pack Explanation -->
+                        <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all border-r-4 border-r-sky-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-sky-500/20 p-3 rounded-2xl text-sky-500"><i data-lucide="zap"></i></div>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">شرح Pack Pro & VIP</h4>
+                            </div>
+                            <p class="text-slate-300 arabic-text">فالـ <span class="text-sky-400 font-bold">Pack Pro</span> كتوصل بالتوصيات يوميا من الاثنين تال لخميس لمدة عامين. أما الـ <span class="text-amber-500 font-bold">Pack VIP</span> كيكون عندك اشتراك مدى الحياة ومعاك مساعد خاص كيتبع معاك خطوة بخطوة.</p>
                         </div>
-                        <p class="text-slate-300 arabic-text">نوفر لك فريقاً من المحترفين الذين يتداولون بدلاً عنك بنسبة 100% على حسابك الخاص. نحن نتكفل بكل شيء لضمان أفضل النتائج دون مجهود منك.</p>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-sky-500/20 p-3 rounded-2xl text-sky-500"><i data-lucide="zap"></i></div>
-                            <h4 class="text-2xl font-black text-white uppercase tracking-tighter">Pack Pro & VIP</h4>
-                        </div>
-                        <p class="text-slate-300 arabic-text">في الـ Pack Pro ستحصل على توصيات مباشرة لمدة عامين. أما الـ Pack VIP فهو يمنحك اشتراكاً مدى الحياة مع مساعد خاص يرافقك خطوة بخطوة.</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-right">
-                    <div class="bg-amber-500/10 border-2 border-amber-500/30 p-8 rounded-[40px] relative overflow-hidden">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="play-circle"></i></div>
-                            <h4 class="text-2xl font-black text-white uppercase tracking-tighter">دورة تدريبية حصرية (Formation)</h4>
-                        </div>
-                        <p class="text-slate-200 arabic-text mb-6">ملي كتدخل تشترك معانا، كنصيفطو ليك <span class="text-amber-500 font-black">6 ديال الفيديوهات</span> ديال الشرح، كل فيديو فيه <span class="text-white font-bold">7 دقايق</span>. هاد التكوين مخدوم باش أي واحد دخل عندنا يفهم كولشي <span class="text-emerald-500 font-black">100%</span> ومايبقى عندو حتى تساؤل، واخا تكون يلاه بادي غاتفهم كولشي وغاتعرف كيفاش تخدم.</p>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-emerald-500/20 p-3 rounded-2xl text-emerald-500"><i data-lucide="landmark"></i></div>
-                            <h4 class="text-2xl font-black text-white uppercase tracking-tighter">سحب الأرباح والتطبيقات</h4>
-                        </div>
-                        <p class="text-slate-300 arabic-text">الأرباح التي تحققها يمكن سحبها مباشرة إلى حسابك البنكي المغربي بكل سهولة. كل ما تحتاجه هو تطبيق التداول وتطبيق الوسيط الخاص بك، ونحن سنشرح لك كل ذلك بالتفصيل.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section Gold AI (Restaurée) -->
-    <section id="explanation" class="py-24 bg-gradient-to-b from-transparent to-amber-500/5">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1 bg-white/5 border border-white/10 rounded-[40px] p-8 text-right" dir="rtl">
-                <h3 class="text-3xl font-black text-white italic underline decoration-amber-500 decoration-4 mb-8 tracking-tighter">لماذا نختار الذهب؟ (رأي الذكاء الاصطناعي)</h3>
-                <div class="space-y-6 text-slate-300 text-lg arabic-text">
-                    <p>وفقاً لتحليلات <span class="text-amber-500 font-bold">الذكاء الاصطناعي</span>، يُعتبر الذهب (XAUUSD) الملاذ الآمن الأكثر استقراراً في الأسواق المالية العالمية.</p>
-                    <div class="bg-white/5 p-6 rounded-3xl border-r-4 border-amber-500">
-                        <p class="text-white font-bold">نحن نركز حصرياً على الذهب لأن تقلباته مدروسة، مما يسمح لنا بتحقيق أرباح تراكمية بنسبة مخاطرة منخفضة جداً مقارنة بالعملات الأخرى.</p>
+                        <!-- Capital Explanation -->
+                        <div class="bg-amber-500/10 border-2 border-amber-500/40 p-8 rounded-[35px] hover:bg-amber-500/20 transition-all relative overflow-hidden shadow-2xl shadow-amber-500/10">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="coins"></i></div>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">رأس المال والأرباح (Capital)</h4>
+                            </div>
+                            <p class="text-slate-200 arabic-text">هاد الدومين كيحتاج <span class="text-amber-500 font-black">رأس مال مينيموم ديال 300 درهم</span> باش تبدا. الأرباح ديما كتكون على حساب رأس المال اللي عندك، كلما كان رأس المال كبيير كيكونو الأرباح كثر و مزيانين بزاف.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-right">
+                        <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] relative overflow-hidden p-8 group border-r-4 border-r-amber-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="play-circle"></i></div>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter">دورة تدريبية حصرية (Formation)</h4>
+                            </div>
+                            <p class="text-slate-200 arabic-text mb-6 italic">ملي كتدخل تشترك معانا، كنصيفطو ليك <span class="text-amber-500 font-black">6 ديال الفيديوهات</span> ديال الشرح، كل فيديو فيه <span class="text-white font-bold">7 دقايق</span>. هاد التكوين مخدوم باش أي واحد دخل عندنا يفهم كولشي 100% ومايبقى عندو حتى تساؤل.</p>
+                        </div>
+                        
+                        <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-500/20 p-3 rounded-2xl text-red-500"><i data-lucide="briefcase"></i></div>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter">إدارة الحسابات (Account Management)</h4>
+                            </div>
+                            <p class="text-slate-300 arabic-text">نوفر لك فريقاً من المحترفين الذين يتداولون بدلاً عنك بنسبة 100% على حسابك الخاص. نحن نتكفل بكل شيء لضمان أفضل النتائج دون مجهود منك.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="order-1 lg:order-2 space-y-8">
-                <div class="bg-amber-500/10 w-20 h-20 rounded-3xl flex items-center justify-center text-amber-500 mb-6"><i data-lucide="brain" class="w-10 h-10"></i></div>
-                <h2 class="text-4xl md:text-5xl font-black text-white uppercase italic">Analyse <br /><span class="gold-gradient">Propulsée par l'IA</span></h2>
-                <p class="text-xl text-slate-400 italic">Découvrez pourquoi notre focus exclusif sur l'or combiné à l'intelligence artificielle fait de nous le leader du marché.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Vidéo (MONEY = HAPPINESS) -->
-    <section id="strategy-video" class="py-24 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center">
+        <!-- GOLD AI -->
+        <section class="py-24 bg-gradient-to-b from-transparent to-amber-500/5">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 bg-white/5 border border-white/10 rounded-[40px] p-8 text-right" dir="rtl">
+                    <h3 class="text-3xl font-black text-white italic underline decoration-amber-500 decoration-4 mb-8 tracking-tighter">لماذا نختار الذهب؟ (رأي الذكاء الاصطناعي)</h3>
+                    <div class="space-y-6 text-slate-300 text-lg arabic-text">
+                        <p>وفقاً لتحليلات <span class="text-amber-500 font-bold">الذكاء الاصطناعي</span>، يُعتبر الذهب الملاذ الآمن الأكثر استقراراً فالعالم.</p>
+                        <div class="bg-white/5 p-6 rounded-3xl border-r-4 border-amber-500 shadow-xl">
+                            <p class="text-white font-bold italic">نحن نركز حصرياً على الذهب لأن تقلباته مدروسة، مما يسمح لنا بتحقيق أرباح تراكمية بنسبة مخاطرة منخفضة جداً.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 space-y-8 text-center lg:text-left">
+                    <div class="bg-amber-500/10 w-20 h-20 rounded-3xl flex items-center justify-center text-amber-500 mb-6 mx-auto lg:mx-0"><i data-lucide="brain" class="w-10 h-10"></i></div>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter leading-tight">Analyse <br /><span class="gold-gradient">Propulsée par l'IA</span></h2>
+                    <p class="text-xl text-slate-400 italic">Découvrez pourquoi notre focus exclusif sur l'or combiné à l'IA fait de nous le leader.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO STRATEGIE -->
+        <section class="py-24 relative overflow-hidden text-center">
             <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4">Stratégie en Direct</h2>
             <h3 class="text-4xl font-black text-white italic tracking-tighter mb-12">MONEY = HAPPINESS</h3>
-            <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black">
-                <video class="w-full aspect-video object-cover" controls playsinline>
-                    <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black group">
+                    <video class="w-full aspect-video object-cover" controls playsinline>
+                        <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Présentation (Home) -->
-    <section id="home" class="relative py-24">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-amber-500 uppercase tracking-widest">
-                    <span>Trader Marocain 🇲🇦</span>
+        <!-- SECTION RÉSULTATS (6 PHOTOS) -->
+        <section id="resultats" class="py-24 bg-[#0a0c10] relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <p class="text-emerald-500 font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> Nos Gains - Mars 2026</p>
+                        <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter">Performance Réelle</h3>
+                    </div>
+                    <p class="text-slate-500 max-w-sm italic">Cliquez sur les photos pour examiner nos preuves de profits.</p>
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-amber-500 font-black text-2xl tracking-widest uppercase">MAMOUN – TRADER MAROCAIN</h2>
-                    <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight italic">Spécialiste du trading sur <br /><span class="gold-gradient text-white">XAUUSD / GOLD</span></h1>
-                </div>
-                <p class="text-xl text-slate-400 max-w-lg leading-relaxed border-l-4 border-amber-500 pl-6 py-2 bg-white/5 rounded-r-2xl italic">Une stratégie claire, simple et efficace, <span class="text-white font-bold">concentrée 100% sur l’or.</span></p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-3 bg-white/5 p-4 rounded-2xl border border-white/10"><i data-lucide="trending-up" class="text-amber-500"></i><span class="font-bold text-sm uppercase tracking-wider">Analyse Pro</span></div>
-                    <div class="flex items-center space-x-3 bg-white/5 p-4 rounded-2xl border border-white/10"><i data-lucide="users" class="text-amber-500"></i><span class="font-bold text-sm uppercase tracking-wider">+10 000 Membres 🚀</span></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Photo 1 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')">
+                        <img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Signal VIP 📈</div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')">
+                        <img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Account Mgmt 📊</div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')">
+                        <img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Elite Performance 🏆</div>
+                    </div>
+                    <!-- Photo 4 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg')">
+                        <img src="https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">VIP Profit +950$ 🔥</div>
+                    </div>
+                    <!-- Photo 5 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg')">
+                        <img src="https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Results 💰</div>
+                    </div>
+                    <!-- Photo 6 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/JndJcb5d/IMG-8469.jpg')">
+                        <img src="https://i.postimg.cc/JndJcb5d/IMG-8469.jpg" class="w-full h-full object-contain p-2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Success 🚀</div>
+                    </div>
                 </div>
             </div>
-            <div class="bg-[#0a0c10] border border-white/10 rounded-[40px] p-8 relative shadow-3xl shadow-amber-900/10">
-                <h3 class="text-2xl font-black text-white underline decoration-amber-500 decoration-4 mb-8 uppercase tracking-tighter italic">Communauté Gold</h3>
-                <div class="space-y-6">
-                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/5"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold text-slate-300">Signaux de trading XAUUSD</span></div>
-                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/5"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold text-slate-300">Analyses en temps réel</span></div>
-                </div>
-                <div class="mt-10 bg-amber-500 p-6 rounded-3xl text-black text-center font-black uppercase text-sm tracking-widest">Rejoignez la référence Gold au Maroc.</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Résultats (Toutes les 6 photos restaurées) -->
-    <section id="resultats" class="py-24 bg-[#0a0c10]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left">
-                <div>
-                    <p class="text-emerald-500 font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> Nos Gains - Mars 2026</p>
-                    <h3 class="text-4xl md:text-5xl font-black text-white italic">Performance Réelle</h3>
+        <!-- SECTION PRÉSENTATION (BIO) -->
+        <section id="bio" class="relative py-24">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-amber-500 uppercase tracking-widest shadow-xl">
+                        <span>Trader Marocain 🇲🇦</span>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-amber-500 font-black text-2xl tracking-widest uppercase italic">MAMOUN – TRADER MAROCAIN</h2>
+                        <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight italic tracking-tighter">Spécialiste du trading sur <br /><span class="gold-gradient text-white">XAUUSD / GOLD</span></h1>
+                    </div>
+                    <p class="text-xl text-slate-400 max-w-lg leading-relaxed border-l-4 border-amber-500 pl-6 py-2 bg-white/5 rounded-r-2xl italic">Une stratégie claire, simple et efficace, <span class="text-white font-bold">concentrée 100% sur l’or.</span></p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 bg-white/5 p-4 rounded-2xl border border-white/10"><i data-lucide="trending-up" class="text-amber-500"></i><span class="font-bold text-sm uppercase tracking-wider">Analyse Pro</span></div>
+                        <div class="flex items-center space-x-3 bg-white/5 p-4 rounded-2xl border border-white/10"><i data-lucide="users" class="text-amber-500"></i><span class="font-bold text-sm uppercase tracking-wider">+10 000 Membres 🚀</span></div>
+                    </div>
                 </div>
-                <p class="text-slate-500 max-w-sm italic">Cliquez sur les photos pour examiner nos preuves de profits.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Photo 1 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')">
-                    <img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">Signal VIP 📈</div>
-                </div>
-                <!-- Photo 2 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')">
-                    <img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">Account Mgmt 📊</div>
-                </div>
-                <!-- Photo 3 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')">
-                    <img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">Elite Performance 🏆</div>
-                </div>
-                <!-- Photo 4 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg')">
-                    <img src="https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">VIP Profit +950$ 🔥</div>
-                </div>
-                <!-- Photo 5 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg')">
-                    <img src="https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">Copy Trading Results 💰</div>
-                </div>
-                <!-- Photo 6 -->
-                <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/JndJcb5d/IMG-8469.jpg')">
-                    <img src="https://i.postimg.cc/JndJcb5d/IMG-8469.jpg" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl">Client Success 🚀</div>
+                <div class="bg-[#0a0c10] border border-white/10 rounded-[40px] p-8 relative shadow-3xl shadow-amber-900/10 backdrop-blur-sm">
+                    <h3 class="text-2xl font-black text-white underline decoration-amber-500 decoration-4 mb-8 uppercase tracking-tighter italic text-center">Communauté Gold</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/5"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold text-slate-300">Signaux de trading XAUUSD</span></div>
+                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/5"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold text-slate-300">Analyses en temps réel</span></div>
+                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/5"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold text-slate-300">Accompagnement VIP</span></div>
+                    </div>
+                    <div class="mt-10 bg-amber-500 p-6 rounded-3xl text-black text-center font-black uppercase text-sm tracking-widest shadow-xl">Rejoignez la référence Gold au Maroc.</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Risque Warning -->
-    <section class="py-16 bg-black border-t-2 border-amber-900/30 text-center px-6">
-        <div class="max-w-4xl mx-auto">
-            <i data-lucide="alert-triangle" class="w-12 h-12 text-amber-500 mx-auto mb-6"></i>
-            <h3 class="text-2xl font-black text-white mb-6 uppercase tracking-widest underline decoration-amber-500 decoration-2">Avertissement sur les risques</h3>
-            <p class="text-slate-400 text-lg italic leading-relaxed mb-4">« Le trading est un domaine qui comporte des risques réels. Sachez que sur ce marché, il y a du <span class="text-emerald-500 font-bold">Rbah</span> (profit) et de la <span class="text-rose-500 font-bold">Khsara</span> (perte). N'investissez que ce que vous êtes prêt à perdre. »</p>
-            <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-6 border-t border-white/10 pt-6">Trading involves risk. Only trade with money you can afford to lose.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black py-16 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-center space-x-3 mb-6"><i data-lucide="coins" class="text-amber-500 w-8 h-8"></i><span class="text-2xl font-black text-white uppercase">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span></div>
-            <p class="text-slate-500 text-xs font-black uppercase tracking-widest mb-6">MAMOUN – TRADER MAROCAIN 🇲🇦</p>
-            <div class="flex justify-center space-x-6 mb-12">
-                <a href="https://instagram.com/mamouncompany_officiel" target="_blank" class="text-slate-400 hover:text-amber-500"><i data-lucide="instagram"></i></a>
-                <a href="https://wa.me/212612510935" target="_blank" class="text-slate-400 hover:text-emerald-500"><i data-lucide="message-circle"></i></a>
+        <!-- AVERTISSEMENT RISQUE -->
+        <section class="py-16 bg-black border-t-2 border-amber-900/30 text-center px-6">
+            <div class="max-w-4xl mx-auto">
+                <i data-lucide="alert-triangle" class="w-12 h-12 text-amber-500 mx-auto mb-6"></i>
+                <h3 class="text-2xl font-black text-white mb-6 uppercase tracking-widest underline decoration-amber-500 decoration-2 italic">Avertissement sur les risques</h3>
+                <p class="text-slate-400 text-lg italic leading-relaxed mb-4">« Le trading est un domaine qui comporte des risques réels. Sachez que sur ce marché, il y a du <span class="text-emerald-500 font-bold">Rbah</span> (profit) et de la <span class="text-rose-500 font-bold">Khsara</span> (perte). N'investissez que ce que vous êtes prêt à perdre. »</p>
+                <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-6 border-t border-white/10 pt-6 opacity-40">Trading involves risk. Only trade with money you can afford to lose.</p>
             </div>
-            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic">© 2026 MAMOUN COMPANY XAUUSD. Casablanca, Maroc.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-black py-16 border-t border-white/5 text-center">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-center space-x-3 mb-6"><i data-lucide="coins" class="text-amber-500 w-8 h-8"></i><span class="text-2xl font-black text-white uppercase italic tracking-tighter">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span></div>
+                <div class="flex justify-center space-x-6 mb-12"><a href="https://instagram.com/mamouncompany_officiel" target="_blank" class="text-slate-400 hover:text-amber-500 transition-colors"><i data-lucide="instagram"></i></a><a href="https://wa.me/212612510935" target="_blank" class="text-slate-400 hover:text-emerald-500 transition-colors"><i data-lucide="message-circle"></i></a></div>
+                <button onclick="showCGV()" class="text-[10px] text-amber-500/50 hover:text-amber-500 font-black uppercase tracking-[0.2em] italic mb-6 underline">Voir les Conditions Générales</button>
+                <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic opacity-40">© 2026 MAMOUN COMPANY XAUUSD. Casablanca, Maroc.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PAGE CONDITIONS GÉNÉRALES (ISOLÉE) -->
+    <div id="cgv-page" class="page min-h-screen bg-black flex flex-col items-center justify-center py-24" style="display:none">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
+                <h3 class="text-3xl md:text-5xl font-black uppercase italic gold-gradient tracking-tighter">الشروط والأحكام / CGV</h3>
+                <button onclick="showMain()" class="bg-white/5 hover:bg-white/10 text-amber-500 px-6 py-3 rounded-2xl font-black uppercase text-xs flex items-center gap-2 transition-all">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
+                <!-- Version Darija Script -->
+                <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-right shadow-2xl" dir="rtl">
+                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter uppercase italic">الشروط والأحكام</h4>
+                    <div class="space-y-8 text-slate-300 arabic-text">
+                        <p><strong class="text-white">1. طبيعة الخدمة:</strong> حنا كنقدمو استشارات تعليمية وتوصيات ديال التداول على الذهب. حنا ماشي بنكة ولا مؤسسة مالية.</p>
+                        <p><strong class="text-white">2. الربح والخسارة:</strong> هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس. النتائج اللي دازت ماشي ضمانة للربح فالمستقبل.</p>
+                        <p><strong class="text-white">3. سياسة الاسترجاع:</strong> ملي كيتفعل ليك الاشتراك وكيتصيفطو الفيديوهات التعليمية، مايمكنش ترجع فلوسك.</p>
+                        <p><strong class="text-white">4. المسؤولية:</strong> المشترك هو المسؤول اللول والأخير على كاع قراراتو المالية وحجم المخاطرة اللي كيدير فالحساب ديالو.</p>
+                        <p><strong class="text-white">5. السرية:</strong> ممنوع تبارطاجي المحتوى ديال الفيديوهات ولا التوصيات اللي فالمجموعة مع شي حد برا لݣروب.</p>
+                    </div>
+                </div>
+
+                <!-- Version Française -->
+                <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-left shadow-2xl">
+                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter italic uppercase">CONDITIONS GÉNÉRALES</h4>
+                    <div class="space-y-8 text-slate-300">
+                        <p><strong class="text-white">1. Nature du service:</strong> Nous fournissons des conseils éducatifs et des signaux de trading sur l'or. Nous ne sommes pas une institution bancaire.</p>
+                        <p><strong class="text-white">2. Profits et Pertes:</strong> Le trading comporte des gains comme des pertes. Les résultats passés ne sont pas une garantie de profit futur.</p>
+                        <p><strong class="text-white">3. Politique de remboursement:</strong> Une fois l'abonnement activé et les vidéos envoyées, aucun remboursement n'est possible.</p>
+                        <p><strong class="text-white">4. Responsabilité:</strong> L'abonné est seul responsable de ses décisions financières et du risque pris.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script>
         lucide.createIcons();
+
+        // Système de pages
+        function showCGV() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('cgv-page').style.display = 'flex';
+            window.scrollTo(0,0);
+        }
+        function showMain() {
+            document.getElementById('cgv-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        // Nav Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (window.scrollY > 20) {
@@ -422,28 +454,36 @@
             }
         });
 
+        // Modals Paiement
         const pModal = document.getElementById('payment-modal');
         const waLink = document.getElementById('wa-link');
-        const notif = document.getElementById('copy-notif');
 
         function openPayment(packName) {
             const msg = `Bonjour Mamoun Company XAUUSD, je viens d'effectuer le paiement pour mon inscription au : ${packName}. Voici mon reçu :`;
             waLink.href = `https://wa.me/+212612510935?text=${encodeURIComponent(msg)}`;
             pModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
-        function closePayment() { pModal.classList.remove('active'); }
+        function closePayment() { pModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
+        
         function copyRIB(text) {
             const el = document.createElement('textarea'); el.value = text;
             document.body.appendChild(el); el.select(); document.execCommand('copy');
-            document.body.removeChild(el); notif.style.opacity = '1';
-            setTimeout(() => notif.style.opacity = '0', 2000);
+            document.body.removeChild(el); 
         }
 
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-        function openModal(src) { modalImg.src = src; modal.classList.add('active'); }
-        function closeModal() { modal.classList.remove('active'); }
+        // Modal Preview Image
+        function openModal(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
+        // Lingots d'Or
         function createGoldElements() {
             const container = document.getElementById('gold-particles-container');
             for (let i = 0; i < 20; i++) {
@@ -451,13 +491,6 @@
                 p.style.left = `${Math.random() * 100}vw`; p.style.width = p.style.height = `${Math.random() * 4 + 2}px`;
                 p.style.animationDuration = `${Math.random() * 15 + 10}s`; p.style.animationDelay = `${-Math.random() * 20}s`;
                 container.appendChild(p);
-            }
-            for (let i = 0; i < 8; i++) {
-                const b = document.createElement('div'); b.className = 'gold-bar-bg';
-                const w = Math.random() * 30 + 20; b.style.left = `${Math.random() * 100}vw`;
-                b.style.width = `${w}px`; b.style.height = `${w / 2.5}px`;
-                b.style.animationDuration = `${Math.random() * 20 + 15}s`; b.style.animationDelay = `${-Math.random() * 25}s`;
-                container.appendChild(b);
             }
         }
         createGoldElements();

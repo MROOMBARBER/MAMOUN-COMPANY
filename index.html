@@ -3,12 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAMOUN COMPANY XAUUSD - KING OF GOLD</title>
     
-    <!-- Meta Tags -->
-    <meta property="og:title" content="MAMOUN COMPANY XAUUSD - KING OF GOLD">
-    <meta property="og:description" content="Spécialiste XAUUSD / GOLD. Rejoignez la référence Gold au Maroc.">
+    <!-- SEO & Indexation - MAMOUN GOLD & TRADING MAROC -->
+    <title>MAMOUN GOLD - Mamoun Company | Leader Trading Maroc XAUUSD</title>
+    <meta name="description" content="MAMOUN GOLD par Mamoun Company : La référence n°1 du Trading Maroc. Spécialiste Mamoun Maroc Trading sur l'or (XAUUSD). Signaux VIP, gestion de compte et formation.">
+    <meta name="keywords" content="mamoun gold, mamoun company, trading maroc, mamoun maroc trading, mamoungold, trading or maroc, xauusd maroc, signaux trading maroc, expert trading maroc">
+    <meta name="author" content="Mamoun Company">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mamoungold.com">
+
+    <!-- Meta Tags Open Graph (Facebook/WhatsApp/Instagram) -->
+    <meta property="og:title" content="MAMOUN GOLD - Mamoun Company | King of Trading Maroc">
+    <meta property="og:description" content="Rejoignez Mamoun Gold, l'élite du Trading Maroc. Expertise Mamoun Maroc Trading sur XAUUSD.">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://i.postimg.cc/HkRHwKXt/photo-5859575830298692928-y.jpg">
+
+    <!-- Schema.org - Google Business Intelligence -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Mamoun Gold - Mamoun Company Trading Maroc",
+      "description": "Expertise en Mamoun Maroc Trading. Leader du trading sur l'or au Maroc.",
+      "url": "https://mamoungold.com",
+      "logo": "https://i.postimg.cc/W4kZ8GZd/IMG-8545.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Casablanca",
+        "addressCountry": "MA"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250"
+      },
+      "sameAs": [
+        "https://instagram.com/mamouncompany_officiel"
+      ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/W4kZ8GZd/IMG-8545.jpg">
@@ -40,7 +73,6 @@
         
         html { scroll-behavior: smooth; }
 
-        /* --- ANIMATION CHART TRADING --- */
         .chart-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -52,7 +84,6 @@
 
         @keyframes move-bg { from { background-position: 0 0; } to { background-position: 480px 480px; } }
 
-        /* --- ANIMATIONS LINGOTS D'OR --- */
         .gold-piece {
             position: fixed; pointer-events: none; z-index: -1;
             background: linear-gradient(135deg, #fbbf24, #b45309);
@@ -92,7 +123,7 @@
     <div id="payment-modal" class="modal-overlay" onclick="closePayment()">
         <div class="payment-card" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="text-xl font-black text-white uppercase italic">Informations de Paiement</h3>
+                <h3 class="text-xl font-black text-white uppercase italic">Paiement - Mamoun Gold</h3>
                 <button onclick="closePayment()" class="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors">
                     <i data-lucide="x" class="w-5 h-5 text-slate-400"></i>
                 </button>
@@ -122,7 +153,6 @@
                 </div>
             </div>
 
-            <!-- Warning Message -->
             <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl mb-6 text-center">
                 <p class="text-red-500 font-bold text-sm" dir="rtl">المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
             </div>
@@ -136,30 +166,28 @@
     <!-- Modal Image Preview -->
     <div id="modal" class="modal-overlay" onclick="closeModal()">
         <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full"><i data-lucide="x" class="w-8 h-8"></i></button>
-        <img id="modal-img" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="" alt="">
+        <img id="modal-img" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="" alt="Aperçu Mamoun Gold Trading Maroc">
     </div>
 
-    <!-- Page Principale -->
     <div id="main-page" class="page">
-        <!-- Ticker Rouge -->
+        <!-- Ticker -->
         <div class="bg-red-600 text-white py-2.5 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
             <div class="animate-marquee font-black text-[11px] uppercase tracking-[0.2em] flex items-center space-x-12">
-                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
-                <span>MAMOUN COMPANY KING OF GOLD 👑</span>
+                <span>MAMOUN COMPANY - MAMOUN GOLD 👑</span>
+                <span>TRADING MAROC XAUUSD 👑</span>
+                <span>MAMOUN MAROC TRADING LEADER 👑</span>
+                <span>MAMOUN GOLD IS THE BEST 👑</span>
             </div>
         </div>
 
-        <!-- Navigation -->
+        <!-- Nav -->
         <nav id="nav" class="fixed w-full z-50 top-10 py-6">
             <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
                         <i data-lucide="coins" class="text-black w-6 h-6"></i>
                     </div>
-                    <span class="text-lg md:text-xl font-black text-white uppercase tracking-tighter text-white">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span>
+                    <span class="text-lg md:text-xl font-black text-white uppercase tracking-tighter">MAMOUN GOLD <span class="text-amber-500">TRADING</span></span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-8 uppercase font-bold text-sm tracking-widest">
                     <a href="#packs" class="hover:text-amber-500 transition-colors">Packs</a>
@@ -172,12 +200,12 @@
             </div>
         </nav>
 
-        <!-- SECTION PACKS (TOP) -->
+        <!-- Packs -->
         <section id="packs" class="relative pt-52 pb-24">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <div class="mb-20">
-                    <h2 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">Nos Offres Exclusives</h2>
-                    <h3 class="text-4xl md:text-5xl font-black text-white italic" dir="rtl">واجد تطلع النيفو؟</h3>
+                    <h1 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">MAMOUN GOLD - MAMOUN COMPANY</h1>
+                    <h2 class="text-4xl md:text-5xl font-black text-white italic" dir="rtl">واجد تطلع النيفو؟</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- PACK PRO -->
@@ -187,7 +215,6 @@
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Signals Group VIP</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Création du Compte</li>
-                            <li class="flex items-center gap-3 opacity-50"><i data-lucide="x-circle" class="text-slate-500 w-5 h-5"></i> Assistance Privée</li>
                         </ul>
                         <button onclick="openPayment('Pack Pro (1700 DH)')" class="bg-sky-400 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">S'abonner Maintenant</button>
                     </div>
@@ -199,7 +226,6 @@
                             <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Support Dédié</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Création du Compte</li>
                         </ul>
                         <button onclick="openPayment('Gestion de compte (3500 DH)')" class="bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">Démarrer la Gestion</button>
                     </div>
@@ -219,12 +245,12 @@
             </div>
         </section>
 
-        <!-- SECTION EXPLICATION (الشرح) -->
+        <!-- Section Explication -->
         <section id="how-it-works" class="py-24 relative overflow-hidden bg-white/[0.01]">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-right mb-16" dir="rtl">
-                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">كيف نعمل؟</h2>
-                    <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 underline decoration-amber-500 decoration-4">شرح مفصل لخدماتنا</h3>
+                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">كيف نعمل؟ Mamoun Maroc Trading</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 underline decoration-amber-500 decoration-4">شرح مفصل لخدماتنا في Trading Maroc</h3>
                     <div class="h-1.5 w-32 bg-amber-500 rounded-full mr-0 ml-auto"></div>
                 </div>
                 
@@ -233,7 +259,7 @@
                         <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all border-r-4 border-r-sky-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-sky-500/20 p-3 rounded-2xl text-sky-500"><i data-lucide="zap"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">شرح Pack Pro & VIP</h4>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">شرح Pack Pro & VIP مع Mamoun Gold</h4>
                             </div>
                             <p class="text-slate-300 arabic-text italic">فالـ Pack Pro كتوصل بالتوصيات يوميا من الاثنين تال لخميس لمدة عامين. أما الـ Pack VIP كيكون عندك اشتراك مدى الحياة ومعاك مساعد خاص كيتبع معاك خطوة بخطوة.</p>
                         </div>
@@ -241,7 +267,7 @@
                         <div class="bg-amber-500/10 border-2 border-amber-500/40 p-8 rounded-[35px] hover:bg-amber-500/20 transition-all relative overflow-hidden shadow-2xl shadow-amber-500/10">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="coins"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">رأس المال والأرباح (Capital)</h4>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">رأس المال والأرباح في Trading Maroc</h4>
                             </div>
                             <p class="text-slate-200 arabic-text">هاد الدومين كيحتاج <span class="text-amber-500 font-black">رأس مال مينيموم ديال 300 درهم</span> باش تبدا. الأرباح ديما كتكون على حساب رأس المال اللي عندك، كلما كان رأس المال كبيير كيكونو الأرباح كثر و مزيانين بزاف.</p>
                         </div>
@@ -251,15 +277,15 @@
                         <div class="bg-white/5 border border-white/10 p-8 rounded-[40px] relative overflow-hidden group border-r-4 border-r-amber-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="play-circle"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">دورة تدريبية حصرية (Formation)</h4>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">دورة تدريبية حصرية (Mamoun Maroc Trading)</h4>
                             </div>
-                            <p class="text-slate-200 arabic-text mb-6">ملي كتدخل تشترك معانا، كنصيفطو ليك <span class="text-amber-500 font-black">6 ديال الفيديوهات</span> ديال الشرح، كل فيديو فيه <span class="text-white font-bold">7 دقايق</span>. هاد التكوين مخدوم باش أي واحد دخل عندنا يفهم كولشي 100% ومايبقى عندو حتى تساؤل.</p>
+                            <p class="text-slate-200 arabic-text mb-6">ملي كتدخل تشترك معانا فـ Mamoun Gold، كنصيفطو ليك <span class="text-amber-500 font-black">6 ديال الفيديوهات</span> ديال الشرح، كل فيديو فيه <span class="text-white font-bold">7 دقايق</span>. هاد التكوين مخدوم باش أي واحد دخل عندنا يفهم كولشي 100%.</p>
                         </div>
                         
                         <div class="bg-white/5 border border-white/10 p-8 rounded-[35px] hover:bg-white/[0.07] transition-all shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-red-500/20 p-3 rounded-2xl text-red-500"><i data-lucide="briefcase"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">إدارة الحسابات (Account Management)</h4>
+                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">إدارة الحسابات - Mamoun Company</h4>
                             </div>
                             <p class="text-slate-300 arabic-text">نوفر لك فريقاً من المحترفين الذين يتداولون بدلاً عنك بنسبة 100% على حسابك الخاص. نحن نتكفل بكل شيء لضمان أفضل النتائج دون مجهود منك.</p>
                         </div>
@@ -268,29 +294,29 @@
             </div>
         </section>
 
-        <!-- SECTION ANALYSE IA -->
+        <!-- Section Analyse IA -->
         <section class="py-24 bg-gradient-to-b from-transparent to-amber-500/5">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 bg-white/5 border border-white/10 rounded-[40px] p-8 text-right shadow-2xl" dir="rtl">
-                    <h3 class="text-3xl font-black text-white italic underline decoration-amber-500 decoration-4 mb-8 tracking-tighter uppercase italic">لماذا نختار الذهب؟ (رأي الذكاء الاصطناعي)</h3>
+                    <h3 class="text-3xl font-black text-white italic underline decoration-amber-500 decoration-4 mb-8 tracking-tighter uppercase italic">لماذا نختار الذهب في Trading Maroc؟</h3>
                     <div class="space-y-6 text-slate-300 text-lg arabic-text">
                         <p>وفقاً لتحليلات <span class="text-amber-500 font-bold">الذكاء الاصطناعي</span>، يُعتبر الذهب الملاذ الآمن الأكثر استقراراً في الأسواق المالية العالمية.</p>
                         <div class="bg-white/5 p-6 rounded-3xl border-r-4 border-amber-500 shadow-xl">
-                            <p class="text-white font-bold italic">نحن نركز حصرياً على الذهب لأن تقلباته مدروسة، مما يسمح لنا بتحقيق أرباح تراكمية بنسبة مخاطرة منخفضة جداً.</p>
+                            <p class="text-white font-bold italic">نحن نركز حصرياً sur l'or car ses fluctuations sont étudiées, ce qui nous permet de générer des profits cumulés avec un risque très faible chez Mamoun Gold.</p>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2 space-y-8 text-center lg:text-left">
                     <div class="bg-amber-500/10 w-20 h-20 rounded-3xl flex items-center justify-center text-amber-500 mb-6 mx-auto lg:mx-0 shadow-lg"><i data-lucide="brain" class="w-10 h-10"></i></div>
                     <h2 class="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter leading-tight">Analyse <br /><span class="gold-gradient">Propulsée par l'IA</span></h2>
-                    <p class="text-xl text-slate-400 italic">Découvrez pourquoi notre focus exclusif sur l'or fait de nous le leader.</p>
+                    <p class="text-xl text-slate-400 italic">Découvrez pourquoi Mamoun Maroc Trading est le leader exclusif sur l'or.</p>
                 </div>
             </div>
         </section>
 
-        <!-- VIDEO STRATEGIE -->
+        <!-- Vidéo -->
         <section class="py-24 relative overflow-hidden text-center">
-            <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">Stratégie en Direct</h2>
+            <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">Mamoun Gold Strategy</h2>
             <h3 class="text-4xl font-black text-white italic tracking-tighter mb-12 uppercase">MONEY = HAPPINESS</h3>
             <div class="max-w-4xl mx-auto px-6">
                 <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black group transition-all hover:scale-[1.01]">
@@ -301,27 +327,27 @@
             </div>
         </section>
 
-        <!-- SECTION RÉSULTATS (6 PHOTOS) -->
+        <!-- Résultats -->
         <section id="resultats" class="py-24 bg-[#0a0c10] relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left border-b border-white/5 pb-8">
                     <div>
-                        <p class="text-emerald-500 font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-2 italic"><i data-lucide="calendar" class="w-4 h-4"></i> Nos Gains - Mars 2026</p>
+                        <p class="text-emerald-500 font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-2 italic"><i data-lucide="calendar" class="w-4 h-4"></i> Gains Mamoun Gold - Trading Maroc</p>
                         <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter uppercase">Performance Réelle</h3>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')"><img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Signal VIP 📈</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')"><img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Account Mgmt 📊</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')"><img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Elite Performance 🏆</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg')"><img src="https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">VIP Profit +950$ 🔥</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg')"><img src="https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Results 💰</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/JndJcb5d/IMG-8469.jpg')"><img src="https://i.postimg.cc/JndJcb5d/IMG-8469.jpg" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Success 🚀</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')"><img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" alt="Resultat Mamoun Gold Trading Maroc 1" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Signal VIP 📈</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')"><img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" alt="Resultat Mamoun Gold Trading Maroc 2" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Account Mgmt 📊</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')"><img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" alt="Resultat Mamoun Gold Trading Maroc 3" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Elite Performance 🏆</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg')"><img src="https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg" alt="Resultat Mamoun Gold Trading Maroc 4" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">VIP Profit 🔥</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg')"><img src="https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg" alt="Resultat Mamoun Gold Trading Maroc 5" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Results 💰</div></div>
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/JndJcb5d/IMG-8469.jpg')"><img src="https://i.postimg.cc/JndJcb5d/IMG-8469.jpg" alt="Resultat Mamoun Gold Trading Maroc 6" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Success 🚀</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- PRÉSENTATION BIO -->
+        <!-- PRÉSENTATION BIO (RESTAURÉE) -->
         <section id="bio" class="relative py-24">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
@@ -330,41 +356,37 @@
                     </div>
                     <h2 class="text-amber-500 font-black text-2xl tracking-widest uppercase italic tracking-tighter">MAMOUN – TRADER MAROCAIN</h2>
                     <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight italic tracking-tighter">Spécialiste du trading sur <br /><span class="gold-gradient text-white">XAUUSD / GOLD</span></h1>
-                    <p class="text-xl text-slate-400 italic">Une stratégie claire, simple et efficace.</p>
+                    <p class="text-xl text-slate-400 italic">Une stratégie claire, simple et efficace développée par Mamoun Company.</p>
                 </div>
                 <div class="bg-[#0a0c10] border border-white/10 rounded-[40px] p-8 shadow-2xl">
-                    <h3 class="text-2xl font-black text-white mb-8 uppercase tracking-tighter italic text-center underline decoration-amber-500">Communauté Gold</h3>
+                    <h3 class="text-2xl font-black text-white mb-8 uppercase italic text-center underline decoration-amber-500">Communauté Gold</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl transition-all hover:bg-white/10"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold">Signaux de trading XAUUSD</span></div>
-                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl transition-all hover:bg-white/10"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold">Analyses en temps réel</span></div>
+                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl transition-all hover:bg-white/10"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold">Signaux de trading XAUUSD Maroc</span></div>
+                        <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl transition-all hover:bg-white/10"><i data-lucide="check-circle-2" class="text-emerald-500"></i><span class="font-bold">Analyses Mamoun Maroc Trading</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER -->
+        <!-- Footer -->
         <footer class="bg-black py-16 border-t border-white/5 text-center">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex items-center justify-center space-x-3 mb-6"><i data-lucide="coins" class="text-amber-500 w-8 h-8"></i><span class="text-2xl font-black text-white uppercase italic tracking-tighter">MAMOUN COMPANY <span class="text-amber-500">XAUUSD</span></span></div>
+                <div class="flex items-center justify-center space-x-3 mb-6"><i data-lucide="coins" class="text-amber-500 w-8 h-8"></i><span class="text-2xl font-black text-white uppercase italic">MAMOUN GOLD <span class="text-amber-500">TRADING</span></span></div>
                 <div class="flex justify-center space-x-6 mb-12"><a href="https://instagram.com/mamouncompany_officiel" target="_blank" class="text-slate-400 hover:text-amber-500 transition-colors"><i data-lucide="instagram"></i></a><a href="https://wa.me/212612510935" target="_blank" class="text-slate-400 hover:text-emerald-500 transition-colors"><i data-lucide="message-circle"></i></a></div>
-                <button onclick="showCGV()" class="text-[10px] text-amber-500/50 hover:text-amber-500 font-black uppercase tracking-[0.2em] italic mb-6 underline decoration-amber-500/30">Voir les Conditions Générales</button>
-                <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic opacity-40">© 2026 MAMOUN COMPANY XAUUSD. Casablanca, Maroc.</p>
+                <button onclick="showCGV()" class="text-[10px] text-amber-500/50 hover:text-amber-500 font-black uppercase underline decoration-amber-500/30">Voir les Conditions Générales Mamoun Company</button>
+                <p class="text-[10px] text-slate-600 font-black uppercase opacity-40">© 2026 MAMOUN GOLD XAUUSD. Casablanca, Maroc.</p>
             </div>
         </footer>
     </div>
 
-    <!-- PAGE CGV (RESTAURÉE KIMA KANET) -->
+    <!-- Page CGV -->
     <div id="cgv-page" class="page min-h-screen bg-black flex flex-col items-center justify-center py-24" style="display:none">
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
-                <h3 class="text-3xl md:text-5xl font-black uppercase italic gold-gradient tracking-tighter">الشروط والأحكام / CGV</h3>
-                <button onclick="showMain()" class="bg-white/5 hover:bg-white/10 text-amber-500 px-6 py-3 rounded-2xl font-black uppercase text-xs flex items-center gap-2 transition-all shadow-lg">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour
-                </button>
+                <h3 class="text-3xl md:text-5xl font-black uppercase italic gold-gradient tracking-tighter">الشروط والأحكام Mamoun Gold</h3>
+                <button onclick="showMain()" class="bg-white/5 hover:bg-white/10 text-amber-500 px-6 py-3 rounded-2xl font-black uppercase text-xs flex items-center gap-2 transition-all shadow-lg">Retour</button>
             </div>
-            
             <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
-                <!-- Version Darija Script (Restored) -->
                 <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-right shadow-2xl" dir="rtl">
                     <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter uppercase italic">الشروط والأحكام</h4>
                     <div class="space-y-8 text-slate-300 arabic-text">
@@ -375,8 +397,6 @@
                         <p><strong class="text-white">5. السرية:</strong> ممنوع تبارطاجي المحتوى ديال الفيديوهات ولا التوصيات اللي فالمجموعة مع شي حد برا لݣروب.</p>
                     </div>
                 </div>
-
-                <!-- Version Française (Restored) -->
                 <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-left shadow-2xl">
                     <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter italic uppercase">CONDITIONS GÉNÉRALES</h4>
                     <div class="space-y-8 text-slate-300">
@@ -391,7 +411,6 @@
         </div>
     </div>
 
-    <!-- NOTIF COPIE -->
     <div id="copy-notif" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-2xl z-[200] opacity-0 transition-opacity pointer-events-none transition-all">Numéro Copié ! ✅</div>
 
     <script>
@@ -435,7 +454,6 @@
 
         function createGoldElements() {
             const container = document.getElementById('gold-particles-container');
-            // Créer les petites particules
             for (let i = 0; i < 20; i++) {
                 const p = document.createElement('div'); p.className = 'gold-piece';
                 p.style.left = `${Math.random() * 100}vw`; 
@@ -444,7 +462,6 @@
                 p.style.animationDelay = `${-Math.random() * 20}s`;
                 container.appendChild(p);
             }
-            // Créer les lingots (barres)
             for (let i = 0; i < 12; i++) {
                 const b = document.createElement('div'); b.className = 'gold-bar-bg';
                 const w = Math.random() * 50 + 20; 

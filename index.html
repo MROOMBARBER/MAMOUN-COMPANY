@@ -103,7 +103,7 @@
         .page { transition: opacity 0.5s ease; }
 
         /* TYPING EFFECT CLASSES */
-        .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; }
+        .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; white-space: pre-wrap; }
         .type-writer.done { border-right: none; }
     </style>
 </head>
@@ -220,7 +220,6 @@
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
                             <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Support Dédié</li>
                         </ul>
                         <button onclick="openPayment('Gestion de compte (3500 DH)')" class="bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">Démarrer la Gestion</button>
                     </div>
@@ -232,7 +231,6 @@
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left">
                             <li class="flex items-center gap-3"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Signals Lifetime 👑</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Assistance Privée 24/7</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Création & Setup Complet</li>
                         </ul>
                         <button onclick="openPayment('Pack VIP (2500 DH)')" class="bg-amber-500 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm shadow-lg">Devenir VIP</button>
                     </div>
@@ -316,7 +314,23 @@
             </div>
         </section>
 
-        <!-- Résultats -->
+        <!-- VIDEO STRATEGIE -->
+        <section class="py-24 relative overflow-hidden text-center">
+            <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">Mamoun Gold Strategy</h2>
+            <h3 class="text-4xl md:text-6xl font-black text-white italic tracking-tighter mb-12 flex flex-col items-center">
+                <span class="type-writer mb-2" data-text="MONEY = HAPPINESS"></span>
+                <span class="type-writer" data-text="المال = السعادة"></span>
+            </h3>
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black group transition-all hover:scale-[1.01]">
+                    <video class="w-full aspect-video object-cover" controls playsinline>
+                        <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Résultats - RESTORED 6 PHOTOS -->
         <section id="resultats" class="py-24 bg-[#0a0c10] relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left border-b border-white/5 pb-8">
@@ -328,9 +342,36 @@
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')"><img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" alt="Resultat Mamoun Gold 1" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Signal VIP 📈</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')"><img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" alt="Resultat Mamoun Gold 2" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Account Mgmt 📊</div></div>
-                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')"><img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" alt="Resultat Mamoun Gold 3" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105"><div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Elite Performance 🏆</div></div>
+                    <!-- Photo 1 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg')">
+                        <img src="https://i.postimg.cc/vZNsyTXQ/IMG-8464.jpg" alt="Mamoun Gold Result 1" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Signal VIP 📈</div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/wjGpzMF8/IMG-8465.png')">
+                        <img src="https://i.postimg.cc/wjGpzMF8/IMG-8465.png" alt="Mamoun Gold Result 2" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Account Mgmt 📊</div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg')">
+                        <img src="https://i.postimg.cc/VkV8wv4f/IMG-8466.jpg" alt="Mamoun Gold Result 3" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Elite Profit 🏆</div>
+                    </div>
+                    <!-- Photo 4 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg')">
+                        <img src="https://i.postimg.cc/KzsLrnDd/IMG-8467.jpg" alt="Mamoun Gold Result 4" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">VIP Trade 🔥</div>
+                    </div>
+                    <!-- Photo 5 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg')">
+                        <img src="https://i.postimg.cc/bJFbHQ9W/IMG-8468.jpg" alt="Mamoun Gold Result 5" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Results 💰</div>
+                    </div>
+                    <!-- Photo 6 -->
+                    <div class="group relative rounded-[35px] overflow-hidden border border-white/5 bg-slate-900/50 cursor-pointer h-[500px]" onclick="openModal('https://i.postimg.cc/JndJcb5d/IMG-8469.jpg')">
+                        <img src="https://i.postimg.cc/JndJcb5d/IMG-8469.jpg" alt="Mamoun Gold Result 6" class="w-full h-full object-contain p-2 transition-all group-hover:scale-105">
+                        <div class="absolute bottom-6 left-6 text-emerald-400 font-black text-xl italic uppercase">Success 🚀</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -375,7 +416,7 @@
         </footer>
     </div>
 
-    <!-- Page CGV (RESTAURÉE) -->
+    <!-- Page CGV - FULL VERSION RESTORED -->
     <div id="cgv-page" class="page min-h-screen bg-black flex flex-col items-center justify-center py-24" style="display:none">
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
@@ -383,27 +424,26 @@
                 <button onclick="showMain()" class="bg-white/5 hover:bg-white/10 text-amber-500 px-6 py-3 rounded-2xl font-black uppercase text-xs flex items-center gap-2 transition-all shadow-lg">Retour</button>
             </div>
             <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
-                <!-- Version Darija (Restored) -->
+                <!-- Darija Full -->
                 <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-right shadow-2xl" dir="rtl">
                     <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter uppercase italic">الشروط والأحكام</h4>
                     <div class="space-y-8 text-slate-300 arabic-text">
-                        <p><strong class="text-white">1. طبيعة الخدمة:</strong> حنا كنقدمو استشارات تعليمية وتوصيات ديال التداول على الذهب. حنا ماشي بنكة ولا مؤسسة مالية.</p>
-                        <p><strong class="text-white">2. الربح والخسارة:</strong> هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس. النتائج اللي دازت ماشي ضمانة للربح فالمستقبل.</p>
-                        <p><strong class="text-white">3. سياسة الاسترجاع:</strong> ملي كيتفعل ليك الاشتراك وكيتصيفطو الفيديوهات التعليمية، مايمكنش ترجع فلوسك.</p>
-                        <p><strong class="text-white">4. المسؤولية:</strong> المشترك هو المسؤول اللول والأخير على كاع قراراتو المالية وحجم المخاطرة اللي كيدير فالحساب ديالو.</p>
-                        <p><strong class="text-white">5. السرية:</strong> ممنوع تبارطاجي المحتوى ديال الفيديوهات ولا التوصيات اللي فالمجموعة مع شي حد برا لݣروب.</p>
+                        <p><strong class="text-white">1. طبيعة الخدمة:</strong> حنا كنقدمو استشارات تعليمية وتوصيات ديال التداول على الذهب. حنا ماشي بنكة ولا مؤسسة مالية، والخدمات ديالنا غرضها تعليمي وفني فقط.</p>
+                        <p><strong class="text-white">2. الربح والخسارة:</strong> هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس. النتائج اللي دازت ماشي ضمانة للربح فالمستقبل، والذهب سوق متقلب كيحتاج الحذر.</p>
+                        <p><strong class="text-white">3. سياسة الاسترجاع:</strong> بمجرد ما كيتم تفعيل الاشتراك ديالك وإرسال الفيديوهات التعليمية، مايمكنش لينا نرجعو الفلوس حيت المحتوى كيكون وصلك واستفدتي منو.</p>
+                        <p><strong class="text-white">4. المسؤولية المالية:</strong> المشترك هو المسؤول الوحيد على كاع القرارات المالية وحجم المخاطرة اللي كياخد فالحساب الشخصي ديالو. حنا كنقدمو غير توجيهات.</p>
+                        <p><strong class="text-white">5. السرية والمحتوى:</strong> ممنوع منعا كليا تبارطاجي المحتوى ديال الفيديوهات ولا التوصيات اللي فالمجموعة مع شي حد برا لݣروب. أي مخالفة كتعرض صاحبها للطرد بلا تعويض.</p>
                     </div>
                 </div>
-
-                <!-- Version Française (Restored) -->
+                <!-- French Full -->
                 <div class="bg-white/5 p-10 md:p-14 rounded-[50px] border border-white/10 text-left shadow-2xl">
                     <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 tracking-tighter italic uppercase">CONDITIONS GÉNÉRALES</h4>
                     <div class="space-y-8 text-slate-300">
-                        <p><strong class="text-white">1. Nature du service:</strong> Nous fournissons des conseils éducatifs et des signaux de trading sur l'or. Nous ne sommes pas une institution bancaire.</p>
-                        <p><strong class="text-white">2. Profits et Pertes:</strong> Le trading comporte des gains comme des pertes. Les résultats passés ne sont pas une garantie de profit futur.</p>
-                        <p><strong class="text-white">3. Politique de remboursement:</strong> Une fois l'abonnement activé et les vidéos envoyées, aucun remboursement n'est possible.</p>
-                        <p><strong class="text-white">4. Responsabilité:</strong> L'abonné est seul responsable de ses décisions financières et du risque pris.</p>
-                        <p><strong class="text-white">5. Confidentialité:</strong> Il est strictement interdit de partager le contenu des formations avec des tiers.</p>
+                        <p><strong class="text-white">1. Nature du service:</strong> Nous fournissons exclusivement des conseils éducatifs et des signaux techniques. Nous ne sommes pas une institution financière agréée.</p>
+                        <p><strong class="text-white">2. Profits et Pertes:</strong> Le trading sur XAUUSD comporte des risques élevés. Les performances passées ne garantissent pas les résultats futurs. Ne tradez que l'argent que vous pouvez perdre.</p>
+                        <p><strong class="text-white">3. Politique de remboursement:</strong> Une fois l'abonnement activé et le contenu pédagogique envoyé, aucun remboursement ne sera effectué conformément à nos conditions.</p>
+                        <p><strong class="text-white">4. Responsabilité:</strong> L'abonné est le seul maître de ses investissements. Mamoun Company décline toute responsabilité en cas de perte de capital sur votre compte personnel.</p>
+                        <p><strong class="text-white">5. Propriété intellectuelle:</strong> Tout partage non autorisé des signaux ou des vidéos de formation entraînera une résiliation immédiate de l'abonnement sans préavis ni remboursement.</p>
                     </div>
                 </div>
             </div>
@@ -416,31 +456,44 @@
         lucide.createIcons();
 
         // TYPING EFFECT LOGIC
-        const typeWriterEffect = (el) => {
+        const typeWriterEffect = async (el) => {
             const text = el.getAttribute('data-text');
             if (!text) return;
             let i = 0;
             el.innerHTML = '';
             
-            const typing = setInterval(() => {
-                if (i < text.length) {
-                    el.innerHTML += text.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typing);
-                    el.classList.add('done');
-                }
-            }, 60);
+            return new Promise((resolve) => {
+                const typing = setInterval(() => {
+                    if (i < text.length) {
+                        el.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                        el.classList.add('done');
+                        resolve();
+                    }
+                }, 60);
+            });
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver(async (entries) => {
+            for (const entry of entries) {
                 if (entry.isIntersecting) {
-                    typeWriterEffect(entry.target);
-                    observer.unobserve(entry.target);
+                    const parent = entry.target.parentElement;
+                    const siblings = parent.querySelectorAll('.type-writer');
+                    
+                    if (siblings.length > 1 && entry.target === siblings[0]) {
+                        for (const sib of siblings) {
+                            observer.unobserve(sib);
+                            await typeWriterEffect(sib);
+                        }
+                    } else if (siblings.length === 1) {
+                        observer.unobserve(entry.target);
+                        await typeWriterEffect(entry.target);
+                    }
                 }
-            });
-        }, { threshold: 0.5 });
+            }
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('.type-writer').forEach(tw => observer.observe(tw));
 
@@ -505,3 +558,4 @@
     </script>
 </body>
 </html>
+

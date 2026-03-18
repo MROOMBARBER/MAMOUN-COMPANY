@@ -95,6 +95,35 @@
         .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; white-space: pre-wrap; }
         .type-writer.done { border-right: none; }
         
+        /* ATTRACTIVE BUTTON ANIMATION */
+        @keyframes pulse-glow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+        .btn-animated {
+            animation: pulse-glow 2s infinite ease-in-out;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-animated::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            animation: shine 3s infinite linear;
+        }
+        
         .page { position: relative; z-index: 1; }
     </style>
 </head>
@@ -117,7 +146,7 @@
             </div>
             
             <div class="space-y-4 mb-6">
-                <!-- RIBs -->
+                <!-- RIB 1 -->
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10 group">
                     <span class="text-[10px] font-black uppercase text-amber-500 block mb-1">RIB Attijari 🏦</span>
                     <div class="flex justify-between items-center">
@@ -125,6 +154,7 @@
                         <button onclick="copyRIB('007780000171700030611856')" class="text-slate-400 hover:text-amber-500"><i data-lucide="copy" class="w-4 h-4"></i></button>
                     </div>
                 </div>
+                <!-- RIB 2 -->
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10 group">
                     <span class="text-[10px] font-black uppercase text-amber-500 block mb-1">CIH BANK 🏦</span>
                     <div class="flex justify-between items-center">
@@ -132,6 +162,7 @@
                         <button onclick="copyRIB('3384121211006800')" class="text-slate-400 hover:text-amber-500"><i data-lucide="copy" class="w-4 h-4"></i></button>
                     </div>
                 </div>
+                <!-- RIB 3 -->
                 <div class="bg-white/5 p-4 rounded-2xl border border-white/10 group">
                     <span class="text-[10px] font-black uppercase text-amber-500 block mb-1">RIB BMCE BANK 🏦</span>
                     <div class="flex justify-between items-center">
@@ -174,7 +205,7 @@
                     <a href="#packs" class="hover:text-amber-500 transition-colors">Packs</a>
                     <a href="#how-it-works" class="hover:text-amber-500 transition-colors">الشرح</a>
                     <a href="#resultats" class="hover:text-amber-500 transition-colors">Résultats</a>
-                    <button onclick="showCGV()" class="hover:text-amber-500 transition-colors italic underline">الشروط</button>
+                    <button onclick="showCGV()" class="hover:text-amber-500 transition-colors underline">الشروط</button>
                     <a href="https://wa.me/212612510935" class="bg-amber-500 text-black px-6 py-2.5 rounded-lg font-black text-xs transition-all hover:scale-105">OUVRIR UN COMPTE</a>
                 </div>
                 <button class="lg:hidden text-white" onclick="showCGV()"><i data-lucide="shield" class="w-6 h-6"></i></button>
@@ -184,15 +215,16 @@
         <!-- Packs Section -->
         <section id="packs" class="relative pt-52 pb-24">
             <div class="max-w-7xl mx-auto px-6 text-center">
+                <!-- HERO TEXT -->
                 <div class="mb-12">
                     <h1 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">MAMOUN GOLD - MAMOUN COMPANY</h1>
-                    <h2 class="text-4xl md:text-5xl font-black text-white italic flex flex-col items-center" dir="rtl">
-                        <span class="type-writer mb-4" data-text="واجد تطلع النيفو؟"></span>
-                        <span class="type-writer text-3xl md:text-4xl" data-text="مرحبااااااا"></span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white flex flex-col items-center leading-tight" dir="rtl">
+                        <span class="type-writer mb-4 leading-normal" data-text="الفرق بينك وبين اللي نجحو؟ قرار واحد فقط"></span>
+                        <span class="type-writer text-3xl md:text-4xl mt-2" data-text="مرحباااااا"></span>
                     </h2>
                 </div>
                 
-                <!-- MOTIVATIONAL MESSAGE (NEW) -->
+                <!-- MOTIVATIONAL MESSAGE -->
                 <div class="max-w-3xl mx-auto mb-16 bg-white/5 border border-white/10 p-6 rounded-[30px] backdrop-blur-md shadow-2xl relative overflow-hidden group">
                     <div class="absolute inset-0 bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors"></div>
                     <p class="text-slate-200 text-lg md:text-xl font-medium leading-relaxed arabic-text relative z-10" dir="rtl">
@@ -202,28 +234,34 @@
                     </p>
                 </div>
 
+                <!-- THE 3 PACKS (EXACTLY 3) -->
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- PACK PRO -->
-                    <div class="glass-card p-8 flex flex-col hover:border-sky-400 transition-all shadow-xl group">
+                    <!-- 1. PACK PRO -->
+                    <div class="glass-card p-8 flex flex-col relative hover:border-sky-400 transition-all shadow-xl group">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky-400 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-center gap-1.5">
+                            <i data-lucide="flame" class="w-3 h-3"></i> BESTSELLER
+                        </div>
                         <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK PRO</h4>
                         <div class="text-sky-400 font-black text-3xl mb-6">1700 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 2 ans</span></div>
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Signals Group VIP</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Création du Compte</li>
                         </ul>
-                        <button onclick="openPayment('Pack Pro (1700 DH)')" class="bg-sky-400 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm">S'abonner Maintenant</button>
+                        <button onclick="openPayment('Pack Pro (1700 DH)')" class="btn-animated bg-sky-400 text-black py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:bg-sky-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]">الدخول للمستوى العالي 🚀</button>
                     </div>
-                    <!-- PACK MGMT -->
+
+                    <!-- 2. ACCOUNT MANAGEMENT -->
                     <div class="glass-card border-2 border-red-600/50 p-8 flex flex-col hover:border-red-500 shadow-xl transition-all">
-                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter text-red-500">ACCOUNT MGMT</h4>
+                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter text-red-500">ACCOUNT MANAGEMENT</h4>
                         <div class="text-red-500 font-black text-3xl mb-6">3500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 6 mois</span></div>
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
                             <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
                         </ul>
-                        <button onclick="openPayment('Account Management (3500 DH)')" class="bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm">Démarrer la Gestion</button>
+                        <button onclick="openPayment('Account Management (3500 DH)')" class="btn-animated bg-red-600 text-white py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:bg-red-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.6)]">أنا جاهز للاستثمار دابا 👇</button>
                     </div>
-                    <!-- PACK VIP -->
+
+                    <!-- 3. PACK VIP -->
                     <div class="glass-card border-2 border-amber-500 p-8 flex flex-col relative shadow-2xl transition-all hover:scale-[1.02]">
                         <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">OFFRE ELITE</div>
                         <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK VIP</h4>
@@ -232,7 +270,7 @@
                             <li class="flex items-center gap-3"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Signals Lifetime 👑</li>
                             <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Assistance Privée 24/7</li>
                         </ul>
-                        <button onclick="openPayment('Pack VIP (2500 DH)')" class="bg-amber-500 text-black py-4 rounded-xl font-black uppercase tracking-widest text-xs lg:text-sm">Devenir VIP</button>
+                        <button onclick="openPayment('Pack VIP (2500 DH)')" class="btn-animated bg-amber-500 text-black py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]">انا جاهز لل VIP 💸</button>
                     </div>
                 </div>
             </div>
@@ -243,7 +281,7 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-right mb-16" dir="rtl">
                     <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">كيف نعمل؟ Mamoun Maroc Trading</h2>
-                    <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 underline decoration-amber-500 decoration-4">
+                    <h3 class="text-4xl md:text-5xl font-black text-white mb-6 underline decoration-amber-500 decoration-4">
                         <span class="type-writer" data-text="شرح مفصل لخدماتنا في Mamoun company !"></span>
                     </h3>
                 </div>
@@ -253,18 +291,18 @@
                         <div class="glass-card p-8 hover:bg-white/[0.05] transition-all border-r-4 border-r-sky-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-sky-500/20 p-3 rounded-2xl text-sky-500"><i data-lucide="zap"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">شرح Pack Pro & VIP</h4>
+                                <h4 class="text-2xl font-black text-white uppercase">شرح Pack Pro & VIP</h4>
                             </div>
-                            <p class="text-slate-300 arabic-text italic">فالـ Pack Pro كتوصل بالتوصيات يوميا من الاثنين تال لخميس لمدة عامين. أما الـ Pack VIP كيكون عندك اشتراك مدى الحياة ومعاك مساعد خاص كيتبع معاك خطوة بخطوة.</p>
+                            <p class="text-slate-300 arabic-text">فالـ Pack Pro كتوصل بالتوصيات يوميا من الاثنين تال لخميس لمدة عامين. أما الـ Pack VIP كيكون عندك اشتراك مدى الحياة ومعاك مساعد خاص كيتبع معاك خطوة بخطوة.</p>
                         </div>
                         <div class="glass-card p-8 hover:bg-amber-500/10 transition-all border-r-4 border-r-amber-500 shadow-2xl">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="coins"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">رأس المال والأرباح</h4>
+                                <h4 class="text-2xl font-black text-white uppercase">رأس المال والأرباح</h4>
                             </div>
                             <p class="text-slate-200 arabic-text mb-4">هاد الدومين كيحتاج رأس مال مينيموم ديال 300 درهم باش تبدا. الأرباح ديما كتكون على حساب رأس المال اللي عندك.</p>
                             <div class="bg-red-500/10 p-4 rounded-2xl border border-red-500/30 mt-4">
-                                <p class="text-red-400 font-bold text-sm italic leading-relaxed">⚠️ هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس، وحنا كنعاونوك باش تختار الصفقات اللي فيها أقل مخاطرة ممكنة لضمان استمراريتك.</p>
+                                <p class="text-red-400 font-bold text-sm leading-relaxed">⚠️ هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس، وحنا كنعاونوك باش تختار الصفقات اللي فيها أقل مخاطرة ممكنة لضمان استمراريتك.</p>
                             </div>
                         </div>
                     </div>
@@ -272,17 +310,84 @@
                         <div class="glass-card p-8 hover:bg-white/[0.05] transition-all border-r-4 border-r-amber-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="play-circle"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">تكوين شامل فـ Trading Or</h4>
+                                <h4 class="text-2xl font-black text-white uppercase">تكوين شامل فـ Trading Or</h4>
                             </div>
-                            <p class="text-slate-300 arabic-text italic">ملي كتدخل تشترك معانا، كنصيفطو ليك 6 ديال الفيديوهات ديال الشرح، كل فيديو فيه 7 دقايق. هاد التكوين مخدوم باش تفهم كولشي 100%.</p>
+                            <p class="text-slate-300 arabic-text">ملي كتدخل تشترك معانا، كنصيفطو ليك 6 ديال الفيديوهات ديال الشرح، كل فيديو فيه 7 دقايق. هاد التكوين مخدوم باش تفهم كولشي 100%.</p>
                         </div>
                         <div class="glass-card p-8 hover:bg-red-500/10 transition-all border-r-4 border-r-red-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-red-500/20 p-3 rounded-2xl text-red-500"><i data-lucide="briefcase"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase tracking-tighter italic">إدارة الحسابات الاحترافية</h4>
+                                <h4 class="text-2xl font-black text-white uppercase">إدارة الحسابات الاحترافية</h4>
                             </div>
-                            <p class="text-slate-300 arabic-text italic">فريق ديال المحترفين كيتداول بلاصتك 100% على حسابك الخاص. حنا كنتكفلو بكلشي باش نضمنو ليك أحسن النتائج.</p>
+                            <p class="text-slate-300 arabic-text">فريق ديال المحترفين كيتداول بلاصتك 100% على حسابك الخاص. حنا كنتكفلو بكلشي باش نضمنو ليك أحسن النتائج.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY US (علاش حنا ؟) -->
+        <section class="py-24 relative overflow-hidden bg-black/40 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16" dir="rtl">
+                    <h3 class="text-4xl md:text-5xl font-black text-white mb-4">
+                        <span class="type-writer" data-text="علاش حنا ؟"></span>
+                    </h3>
+                    <p class="text-amber-500 font-bold text-xl mt-2">بسيطة ومختصرة:</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8" dir="rtl">
+                    <!-- Item 1 -->
+                    <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-sky-500">
+                        <div class="bg-sky-500/20 p-5 rounded-3xl text-sky-500 mb-6"><i data-lucide="award" class="w-10 h-10"></i></div>
+                        <h4 class="text-2xl font-black text-white">✅ خبرة فالسوق</h4>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-amber-500">
+                        <div class="bg-amber-500/20 p-5 rounded-3xl text-amber-500 mb-6"><i data-lucide="trending-up" class="w-10 h-10"></i></div>
+                        <h4 class="text-2xl font-black text-white">✅ نتائج مستمرة</h4>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-emerald-500">
+                        <div class="bg-emerald-500/20 p-5 rounded-3xl text-emerald-500 mb-6"><i data-lucide="clock" class="w-10 h-10"></i></div>
+                        <h4 class="text-2xl font-black text-white">✅ متابعة يومية</h4>
+                    </div>
+                    <!-- Item 4 (NEW) -->
+                    <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-rose-500">
+                        <div class="bg-rose-500/20 p-5 rounded-3xl text-rose-500 mb-6"><i data-lucide="shield-check" class="w-10 h-10"></i></div>
+                        <h4 class="text-2xl font-black text-white">✅ 0 نصب</h4>
+                    </div>
+                    <!-- Item 5 (NEW) -->
+                    <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-purple-500">
+                        <div class="bg-purple-500/20 p-5 rounded-3xl text-purple-500 mb-6"><i data-lucide="eye" class="w-10 h-10"></i></div>
+                        <h4 class="text-2xl font-black text-white">✅ 100% الشفافية</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16" dir="rtl">
+                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">FAQ</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white mb-4">
+                        <span class="type-writer" data-text="الأسئلة الشائعة"></span>
+                    </h3>
+                </div>
+                <div class="space-y-6" dir="rtl">
+                    <!-- Q1 -->
+                    <div class="glass-card p-8 hover:bg-white/[0.05] transition-all shadow-lg border-r-4 border-r-amber-500">
+                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4">
+                            <i data-lucide="help-circle" class="text-amber-500 w-8 h-8"></i> واش خاصني الخبرة ؟
+                        </h4>
+                        <p class="text-slate-300 arabic-text text-xl pr-12 font-medium leading-relaxed">لا، كنبدأو معاك من 0 وكنوجهوك خطوة بخطوة حتى تفهم كلشي</p>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="glass-card p-8 hover:bg-white/[0.05] transition-all shadow-lg border-r-4 border-r-sky-500">
+                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4">
+                            <i data-lucide="smartphone" class="text-sky-500 w-8 h-8"></i> واش انحتاج Pc ؟
+                        </h4>
+                        <p class="text-slate-300 arabic-text text-xl pr-12 font-medium">لا، غير الهاتف ديالك</p>
                     </div>
                 </div>
             </div>
@@ -292,21 +397,18 @@
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 glass-card rounded-[40px] p-8 text-right shadow-2xl" dir="rtl">
-                    <h3 class="text-3xl font-black text-white italic underline decoration-amber-500 decoration-4 mb-8 tracking-tighter uppercase italic">علاش كنتريديو غير فالذهب؟</h3>
+                    <h3 class="text-3xl font-black text-white underline decoration-amber-500 decoration-4 mb-8 uppercase">علاش كنتريديو غير فالذهب؟</h3>
                     <div class="space-y-6 text-slate-300 text-lg arabic-text">
                         <p>حنا كنخدمو حصريا على <span class="text-amber-500 font-black">الذهب (XAUUSD)</span> حيت كيتعتبر أحسن دوفيز (Devise) وأقوى ملاذ آمن فالسوق المالي.</p>
                         <p>السيولة فيه طالعة بزاف والحركات ديالو باينة ومدروسة، هادشي كيعاونا نخرجو بأرباح زوينة يوميا.</p>
                         <div class="bg-black/30 p-6 rounded-3xl border-r-4 border-amber-500 shadow-xl">
-                            <p class="text-white font-bold italic">وفقاً لتحليلات الذكاء الاصطناعي، التقلبات ديال الذهب كتعطينا أحسن فرص ديال الربح بأقل نسبة ديال الريسك (Risque) مقارنة مع باقي العملات.</p>
+                            <p class="text-white font-bold">التقلبات ديال الذهب كتعطينا أحسن فرص ديال الربح بأقل نسبة ديال الريسك (Risque) مقارنة مع باقي العملات.</p>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2 space-y-8 text-center lg:text-left">
-                    <div class="bg-amber-500/10 w-20 h-20 rounded-3xl flex items-center justify-center text-amber-500 mb-6 mx-auto lg:mx-0 shadow-lg"><i data-lucide="brain" class="w-10 h-10"></i></div>
-                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter leading-tight">
-                        <span class="type-writer" data-text="Analyse Propulsée par l'IA"></span>
-                    </h2>
-                    <p class="text-xl text-slate-400 italic">Leader exclusif sur l'or au Maroc.</p>
+                    <div class="bg-amber-500/10 w-20 h-20 rounded-3xl flex items-center justify-center text-amber-500 mb-6 mx-auto lg:mx-0 shadow-lg"><i data-lucide="trending-up" class="w-10 h-10"></i></div>
+                    <p class="text-2xl text-white font-black italic tracking-widest uppercase">Leader exclusif sur l'or au Maroc.</p>
                 </div>
             </div>
         </section>
@@ -337,8 +439,8 @@
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left border-b border-white/10 pb-8">
                     <div>
                         <p class="text-emerald-500 font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-2 italic"><i data-lucide="calendar" class="w-4 h-4"></i> Performance Or Maroc</p>
-                        <h3 class="text-4xl md:text-5xl font-black text-white italic tracking-tighter uppercase italic">
-                            <span class="type-writer" data-text="Résultats Réels"></span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">
+                            <span class="type-writer" data-text="النتائج ديالنا"></span>
                         </h3>
                     </div>
                 </div>
@@ -391,7 +493,7 @@
             <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
                 <!-- Arabic Terms Full (5 points) -->
                 <div class="glass-card p-10 md:p-14 border border-white/10 text-right shadow-2xl" dir="rtl">
-                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 uppercase italic">الشروط والأحكام</h4>
+                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 uppercase">الشروط والأحكام</h4>
                     <div class="space-y-8 text-slate-300 arabic-text">
                         <p><strong class="text-white">1. طبيعة الخدمة:</strong> حنا كنقدمو استشارات تعليمية وتوصيات ديال التداول على الذهب. حنا ماشي بنكة ولا مؤسسة مالية، والخدمات ديالنا غرضها تعليمي وفني فقط.</p>
                         <p><strong class="text-white">2. الربح والخسارة:</strong> هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس. النتائج اللي دازت ماشي ضمانة للربح فالمستقبل، والذهب سوق متقلب كيحتاج الحذر.</p>
@@ -437,23 +539,24 @@
             }
         };
 
-        // TYPING EFFECT
+        // SPEED-OPTIMIZED TYPING EFFECT
         const typeWriterEffect = async (el) => {
             const text = el.getAttribute('data-text');
             if (!text) return;
+            const chars = Array.from(text);
             let i = 0;
             el.innerHTML = '';
             return new Promise((resolve) => {
                 const typing = setInterval(() => {
-                    if (i < text.length) {
-                        el.innerHTML += text.charAt(i);
+                    if (i < chars.length) {
+                        el.innerHTML += chars[i];
                         i++;
                     } else {
                         clearInterval(typing);
                         el.classList.add('done');
                         resolve();
                     }
-                }, 60);
+                }, 20); // Very fast typing effect (20ms)
             });
         };
 
@@ -500,6 +603,7 @@
     </script>
 </body>
 </html>
+
 
 
 

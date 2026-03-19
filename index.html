@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Indexation - MAMOUN GOLD & TRADING MAROC -->
+    <!-- SEO & Indexatioun -->
     <title>MAMOUN GOLD - Mamoun Company | King of XAUUSD Trading Maroc</title>
     <meta name="description" content="MAMOUN GOLD par Mamoun Company : La référence n°1 du Trading Maroc. Spécialiste Mamoun Maroc Trading sur l'or (XAUUSD). Signaux VIP, gestion de compte et formation.">
     <meta name="keywords" content="mamoun gold, mamoun company, trading maroc, mamoun maroc trading, mamoungold, trading or maroc, xauusd maroc, signaux trading maroc, expert trading maroc">
     
-    <!-- Meta Tags Open Graph (Facebook / Instagram / WhatsApp) -->
+    <!-- Meta Tags Open Graph -->
     <meta property="og:url" content="https://mamoungold.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MAMOUN GOLD - Mamoun Company | King of XAUUSD Trading Maroc">
     <meta property="og:description" content="La référence n°1 du Trading Maroc. Spécialiste sur l'or (XAUUSD). Signaux VIP et gestion de compte.">
-    <meta property="og:image" content="https://i.postimg.cc/sXJxqWP4/IMG-9327.jpg">
-    <meta property="og:image:secure_url" content="https://i.postimg.cc/sXJxqWP4/IMG-9327.jpg">
+    <meta property="og:image" content="https://i.postimg.cc/vZFXzXXx/IMG-9443.jpg">
+    <meta property="og:image:secure_url" content="https://i.postimg.cc/vZFXzXXx/IMG-9443.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -25,21 +25,24 @@
     <meta property="twitter:url" content="https://mamoungold.com/">
     <meta name="twitter:title" content="MAMOUN GOLD - Mamoun Company | King of XAUUSD Trading Maroc">
     <meta name="twitter:description" content="La référence n°1 du Trading Maroc. Spécialiste sur l'or (XAUUSD). Signaux VIP et gestion de compte.">
-    <meta name="twitter:image" content="https://i.postimg.cc/sXJxqWP4/IMG-9327.jpg">
+    <meta name="twitter:image" content="https://i.postimg.cc/vZFXzXXx/IMG-9443.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/W4kZ8GZd/IMG-8545.jpg">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Using original Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- Icônes Lucide -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Ikonen -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #e2e8f0; position: relative; }
         
-        /* FULL VIDEO BACKGROUND SYSTEM */
+        /* Hannergrondvideo Astellungen */
         .video-background {
             position: fixed;
             top: 0; left: 0;
@@ -65,6 +68,7 @@
             z-index: -9;
         }
 
+        /* Marquee Animatioun */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -83,19 +87,19 @@
         
         html { scroll-behavior: smooth; }
 
-        /* MODAL & UI */
+        /* Modal an UI Design */
         .modal-overlay { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.96); align-items: center; justify-content: center; padding: 20px; backdrop-blur: 15px; }
         .modal-overlay.active { display: flex; }
         .payment-card { background: #0a0c10; border: 1px solid rgba(255,215,0,0.3); border-radius: 32px; padding: 24px; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; }
 
         .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-blur: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 40px; }
-        .arabic-text { font-size: 1.15rem; line-height: 1.8; }
+        .arabic-text { font-size: 1.15rem; line-height: 1.8; font-family: 'Cairo', sans-serif; }
         
-        /* TYPING EFFECT */
-        .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; white-space: pre-wrap; }
+        /* Schreifmaschinn Effekt */
+        .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; white-space: pre-wrap; font-family: 'Cairo', sans-serif;}
         .type-writer.done { border-right: none; }
         
-        /* ATTRACTIVE BUTTON ANIMATION */
+        /* Knäppchen Animatiounen */
         @keyframes pulse-glow {
             0% { transform: scale(1); }
             50% { transform: scale(1.04); }
@@ -111,6 +115,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
         }
         .btn-animated::after {
             content: '';
@@ -129,7 +134,7 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- GLOBAL BACKGROUND VIDEO (LOOPING) -->
+    <!-- Globale Hannergrondvideo -->
     <div class="video-background">
         <video id="bgVideo" autoplay muted loop playsinline>
             <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
@@ -137,7 +142,7 @@
     </div>
     <div class="video-overlay"></div>
 
-    <!-- PAYMENT MODAL (WITH RIBS & WARNING) -->
+    <!-- Bezuelungsmodal mat Bankdetailer -->
     <div id="payment-modal" class="modal-overlay" onclick="closePayment()">
         <div class="payment-card shadow-2xl" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center mb-6 border-b border-white/5 pb-4">
@@ -172,9 +177,9 @@
                 </div>
             </div>
 
-            <!-- RED WARNING BOX -->
+            <!-- Warnung -->
             <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl mb-8 text-center shadow-lg">
-                <p class="text-red-500 font-black text-sm" dir="rtl">⚠️ المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
+                <p class="text-red-500 font-black text-sm" style="font-family: 'Cairo', sans-serif;" dir="rtl">⚠️ المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
             </div>
 
             <a id="wa-link" href="#" target="_blank" class="block w-full bg-emerald-600 text-white py-4 rounded-xl text-center font-black uppercase text-sm flex items-center justify-center gap-2 transition-all hover:scale-[1.02]">
@@ -184,7 +189,7 @@
     </div>
 
     <div id="main-page" class="page">
-        <!-- Ticker -->
+        <!-- Ticker uewen -->
         <div class="bg-red-600 text-white py-2.5 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
             <div class="animate-marquee font-black text-[11px] uppercase tracking-[0.2em] flex items-center space-x-12">
                 <span>MAMOUN COMPANY - MAMOUN GOLD 👑</span>
@@ -194,7 +199,7 @@
             </div>
         </div>
 
-        <!-- Nav -->
+        <!-- Navigatioun -->
         <nav id="nav" class="fixed w-full z-50 top-10 py-6 transition-all duration-300">
             <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <div class="flex items-center space-x-3">
@@ -212,10 +217,10 @@
             </div>
         </nav>
 
-        <!-- Packs Section -->
+        <!-- Packs Sektioun -->
         <section id="packs" class="relative pt-52 pb-24">
             <div class="max-w-7xl mx-auto px-6 text-center">
-                <!-- HERO TEXT -->
+                <!-- Hero Text -->
                 <div class="mb-12">
                     <h1 class="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">MAMOUN GOLD - MAMOUN COMPANY</h1>
                     <h2 class="text-3xl md:text-5xl font-black text-white flex flex-col items-center leading-tight" dir="rtl">
@@ -224,28 +229,39 @@
                     </h2>
                 </div>
                 
-                <!-- MOTIVATIONAL MESSAGE -->
+                <!-- Motivatiouns Noriicht -->
                 <div class="max-w-3xl mx-auto mb-16 bg-white/5 border border-white/10 p-6 rounded-[30px] backdrop-blur-md shadow-2xl relative overflow-hidden group">
                     <div class="absolute inset-0 bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors"></div>
                     <p class="text-slate-200 text-lg md:text-xl font-medium leading-relaxed arabic-text relative z-10" dir="rtl">
-                        ماتبقاش عوال على <span class="text-amber-500 font-black">SALAIRE</span> بوحدو 😉<br>
+                        ماتبقاش عوال على <span class="text-amber-500 font-black" style="font-family: 'Inter', sans-serif;">SALAIRE</span> بوحدو 😉<br>
                         راه الوقت ما كيسنا حتى واحد… القرار خاصو يتخذ دابا ⚡<br>
                         دخولك اليوم يقدر يبدل حياتك كاملة 🚀💰
                     </p>
                 </div>
 
-                <!-- NEW EXPLANATION VIDEO AT THE TOP -->
-                <div class="max-w-4xl mx-auto mb-20 text-center">
-                    <h3 class="text-3xl font-black text-white mb-6 underline decoration-amber-500 decoration-4">الشرح</h3>
-                    <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black transition-all hover:scale-[1.01]">
-                        <video class="w-full aspect-video object-cover" controls playsinline>
+                <!-- Video 1 mat neiem Poster -->
+                <div class="max-w-4xl mx-auto mb-20 text-center flex flex-col items-center">
+                    <h3 class="text-3xl font-black text-white mb-6 underline decoration-amber-500 decoration-4" style="font-family: 'Cairo', sans-serif;">الشرح</h3>
+                    
+                    <div class="relative rounded-[30px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black w-full">
+                        <video id="explainer-video" class="w-full aspect-video object-cover" poster="https://i.postimg.cc/vZFXzXXx/IMG-9443.jpg" preload="metadata" controls playsinline>
                             <source src="https://files.catbox.moe/davm6c.mov" type="video/mp4">
                         </video>
+                        
+                        <div id="play-overlay" class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-20 h-16 md:w-24 md:h-16 bg-red-600 rounded-[14px] flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.7)] cursor-pointer pointer-events-auto hover:bg-red-500 transition-colors" onclick="document.getElementById('explainer-video').play()">
+                                <i data-lucide="play" class="fill-white text-white w-8 h-8 ml-1"></i>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <button onclick="document.getElementById('explainer-video').play()" class="mt-6 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all px-8 py-2.5 rounded-full font-bold text-sm tracking-widest flex items-center gap-3">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i> WATCH NOW
+                    </button>
                 </div>
 
-                <!-- THE 3 PACKS (EXACTLY 3) -->
-                <div class="grid md:grid-cols-3 gap-8">
+                <!-- Déi 3 Packs -->
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
                     <!-- 1. PACK PRO -->
                     <div class="glass-card p-8 flex flex-col relative hover:border-sky-400 transition-all shadow-xl group">
                         <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky-400 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-center gap-1.5">
@@ -286,11 +302,11 @@
             </div>
         </section>
 
-        <!-- EXPLANATION SECTION (HOW IT WORKS) -->
+        <!-- Erklärung wéi et funktionéiert -->
         <section id="how-it-works" class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-right mb-16" dir="rtl">
-                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">كيف نعمل؟ Mamoun Maroc Trading</h2>
+                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic" style="font-family: 'Cairo', sans-serif;">كيف نعمل؟ Mamoun Maroc Trading</h2>
                     <h3 class="text-4xl md:text-5xl font-black text-white mb-6 underline decoration-amber-500 decoration-4">
                         <span class="type-writer" data-text="شرح مفصل لخدماتنا في Mamoun company !"></span>
                     </h3>
@@ -301,18 +317,18 @@
                         <div class="glass-card p-8 hover:bg-white/[0.05] transition-all border-r-4 border-r-sky-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-sky-500/20 p-3 rounded-2xl text-sky-500"><i data-lucide="zap"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase">شرح Pack Pro & VIP</h4>
+                                <h4 class="text-2xl font-black text-white uppercase" style="font-family: 'Cairo', sans-serif;">شرح Pack Pro & VIP</h4>
                             </div>
                             <p class="text-slate-300 arabic-text">فالـ Pack Pro كتوصل بالتوصيات يوميا من الاثنين تال لخميس لمدة عامين. أما الـ Pack VIP كيكون عندك اشتراك مدى الحياة ومعاك مساعد خاص كيتبع معاك خطوة بخطوة.</p>
                         </div>
                         <div class="glass-card p-8 hover:bg-amber-500/10 transition-all border-r-4 border-r-amber-500 shadow-2xl">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="coins"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase">رأس المال والأرباح</h4>
+                                <h4 class="text-2xl font-black text-white uppercase" style="font-family: 'Cairo', sans-serif;">رأس المال والأرباح</h4>
                             </div>
                             <p class="text-slate-200 arabic-text mb-4">هاد الدومين كيحتاج رأس مال مينيموم ديال 300 درهم باش تبدا. الأرباح ديما كتكون على حساب رأس المال اللي عندك.</p>
                             <div class="bg-red-500/10 p-4 rounded-2xl border border-red-500/30 mt-4">
-                                <p class="text-red-400 font-bold text-sm leading-relaxed">⚠️ هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس، وحنا كنعاونوك باش تختار الصفقات اللي فيها أقل مخاطرة ممكنة لضمان استمراريتك.</p>
+                                <p class="text-red-400 font-bold text-sm leading-relaxed" style="font-family: 'Cairo', sans-serif;">⚠️ هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس، وحنا كنعاونوك باش تختار الصفقات اللي فيها أقل مخاطرة ممكنة لضمان استمراريتك.</p>
                             </div>
                         </div>
                     </div>
@@ -320,14 +336,14 @@
                         <div class="glass-card p-8 hover:bg-white/[0.05] transition-all border-r-4 border-r-amber-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-amber-500 p-3 rounded-2xl text-black"><i data-lucide="play-circle"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase">تكوين شامل فـ Trading Or</h4>
+                                <h4 class="text-2xl font-black text-white uppercase" style="font-family: 'Cairo', sans-serif;">تكوين شامل فـ Trading Or</h4>
                             </div>
                             <p class="text-slate-300 arabic-text">ملي كتدخل تشترك معانا، كنصيفطو ليك 6 ديال الفيديوهات ديال الشرح، كل فيديو فيه 7 دقايق. هاد التكوين مخدوم باش تفهم كولشي 100%.</p>
                         </div>
                         <div class="glass-card p-8 hover:bg-red-500/10 transition-all border-r-4 border-r-red-500 shadow-lg">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-red-500/20 p-3 rounded-2xl text-red-500"><i data-lucide="briefcase"></i></div>
-                                <h4 class="text-2xl font-black text-white uppercase">إدارة الحسابات الاحترافية</h4>
+                                <h4 class="text-2xl font-black text-white uppercase" style="font-family: 'Cairo', sans-serif;">إدارة الحسابات الاحترافية</h4>
                             </div>
                             <p class="text-slate-300 arabic-text">فريق ديال المحترفين كيتداول بلاصتك 100% على حسابك الخاص. حنا كنتكفلو بكلشي باش نضمنو ليك أحسن النتائج.</p>
                         </div>
@@ -336,65 +352,58 @@
             </div>
         </section>
 
-        <!-- WHY US (علاش حنا ؟) -->
+        <!-- Firwat ons? -->
         <section class="py-24 relative overflow-hidden bg-black/40 backdrop-blur-sm">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16" dir="rtl">
                     <h3 class="text-4xl md:text-5xl font-black text-white mb-4">
                         <span class="type-writer" data-text="علاش حنا ؟"></span>
                     </h3>
-                    <p class="text-amber-500 font-bold text-xl mt-2">بسيطة ومختصرة:</p>
+                    <p class="text-amber-500 font-bold text-xl mt-2" style="font-family: 'Cairo', sans-serif;">بسيطة ومختصرة:</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-8" dir="rtl">
-                    <!-- Item 1 -->
                     <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-sky-500">
                         <div class="bg-sky-500/20 p-5 rounded-3xl text-sky-500 mb-6"><i data-lucide="award" class="w-10 h-10"></i></div>
-                        <h4 class="text-2xl font-black text-white">✅ خبرة فالسوق</h4>
+                        <h4 class="text-2xl font-black text-white" style="font-family: 'Cairo', sans-serif;">✅ خبرة فالسوق</h4>
                     </div>
-                    <!-- Item 2 -->
                     <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-amber-500">
                         <div class="bg-amber-500/20 p-5 rounded-3xl text-amber-500 mb-6"><i data-lucide="trending-up" class="w-10 h-10"></i></div>
-                        <h4 class="text-2xl font-black text-white">✅ نتائج مستمرة</h4>
+                        <h4 class="text-2xl font-black text-white" style="font-family: 'Cairo', sans-serif;">✅ نتائج مستمرة</h4>
                     </div>
-                    <!-- Item 3 -->
                     <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-emerald-500">
                         <div class="bg-emerald-500/20 p-5 rounded-3xl text-emerald-500 mb-6"><i data-lucide="clock" class="w-10 h-10"></i></div>
-                        <h4 class="text-2xl font-black text-white">✅ متابعة يومية</h4>
+                        <h4 class="text-2xl font-black text-white" style="font-family: 'Cairo', sans-serif;">✅ متابعة يومية</h4>
                     </div>
-                    <!-- Item 4 -->
                     <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-rose-500">
                         <div class="bg-rose-500/20 p-5 rounded-3xl text-rose-500 mb-6"><i data-lucide="shield-check" class="w-10 h-10"></i></div>
-                        <h4 class="text-2xl font-black text-white">✅ 0 نصب</h4>
+                        <h4 class="text-2xl font-black text-white" style="font-family: 'Cairo', sans-serif;">✅ 0 نصب</h4>
                     </div>
-                    <!-- Item 5 -->
                     <div class="glass-card w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border-b-4 border-b-purple-500">
                         <div class="bg-purple-500/20 p-5 rounded-3xl text-purple-500 mb-6"><i data-lucide="eye" class="w-10 h-10"></i></div>
-                        <h4 class="text-2xl font-black text-white">✅ 100% الشفافية</h4>
+                        <h4 class="text-2xl font-black text-white" style="font-family: 'Cairo', sans-serif;">✅ 100% الشفافية</h4>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ SECTION -->
+        <!-- FAQ -->
         <section class="py-24 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16" dir="rtl">
-                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">FAQ</h2>
+                    <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic" style="font-family: 'Cairo', sans-serif;">FAQ</h2>
                     <h3 class="text-4xl md:text-5xl font-black text-white mb-4">
                         <span class="type-writer" data-text="الأسئلة الشائعة"></span>
                     </h3>
                 </div>
                 <div class="space-y-6" dir="rtl">
-                    <!-- Q1 -->
                     <div class="glass-card p-8 hover:bg-white/[0.05] transition-all shadow-lg border-r-4 border-r-amber-500">
-                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4">
+                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4" style="font-family: 'Cairo', sans-serif;">
                             <i data-lucide="help-circle" class="text-amber-500 w-8 h-8"></i> واش خاصني الخبرة ؟
                         </h4>
                         <p class="text-slate-300 arabic-text text-xl pr-12 font-medium leading-relaxed">لا، كنبدأو معاك من 0 وكنوجهوك خطوة بخطوة حتى تفهم كلشي</p>
                     </div>
-                    <!-- Q2 -->
                     <div class="glass-card p-8 hover:bg-white/[0.05] transition-all shadow-lg border-r-4 border-r-sky-500">
-                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4">
+                        <h4 class="text-2xl font-black text-white mb-4 flex items-center gap-4" style="font-family: 'Cairo', sans-serif;">
                             <i data-lucide="smartphone" class="text-sky-500 w-8 h-8"></i> واش انحتاج Pc ؟
                         </h4>
                         <p class="text-slate-300 arabic-text text-xl pr-12 font-medium">لا، غير الهاتف ديالك</p>
@@ -403,16 +412,16 @@
             </div>
         </section>
 
-        <!-- WHY GOLD -->
+        <!-- Firwat Gold -->
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 glass-card rounded-[40px] p-8 text-right shadow-2xl" dir="rtl">
-                    <h3 class="text-3xl font-black text-white underline decoration-amber-500 decoration-4 mb-8 uppercase">علاش كنتريديو غير فالذهب؟</h3>
+                    <h3 class="text-3xl font-black text-white underline decoration-amber-500 decoration-4 mb-8 uppercase" style="font-family: 'Cairo', sans-serif;">علاش كنتريديو غير فالذهب؟</h3>
                     <div class="space-y-6 text-slate-300 text-lg arabic-text">
                         <p>حنا كنخدمو حصريا على <span class="text-amber-500 font-black">الذهب (XAUUSD)</span> حيت كيتعتبر أحسن دوفيز (Devise) وأقوى ملاذ آمن فالسوق المالي.</p>
                         <p>السيولة فيه طالعة بزاف والحركات ديالو باينة ومدروسة، هادشي كيعاونا نخرجو بأرباح زوينة يوميا.</p>
                         <div class="bg-black/30 p-6 rounded-3xl border-r-4 border-amber-500 shadow-xl">
-                            <p class="text-white font-bold">التقلبات ديال الذهب كتعطينا أحسن فرص ديال الربح بأقل نسبة ديال الريسك (Risque) مقارنة مع باقي العملات.</p>
+                            <p class="text-white font-bold" style="font-family: 'Cairo', sans-serif;">التقلبات ديال الذهب كتعطينا أحسن فرص ديال الربح بأقل نسبة ديال الريسك (Risque) مقارنة مع باقي العملات.</p>
                         </div>
                     </div>
                 </div>
@@ -423,27 +432,41 @@
             </div>
         </section>
 
-        <!-- SLOGAN SECTION -->
+        <!-- Slogan -->
         <section class="py-24 text-center">
-            <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic">Mamoun Gold Strategy</h2>
+            <h2 class="text-amber-500 font-black uppercase tracking-widest text-sm mb-4 italic" style="font-family: 'Cairo', sans-serif;">Mamoun Gold Strategy</h2>
             <h3 class="text-4xl md:text-8xl font-black text-white italic tracking-tighter mb-12 flex flex-col items-center leading-none">
-                <span class="type-writer mb-4" data-text="MONEY = HAPPINESS"></span>
+                <span class="type-writer mb-4" data-text="MONEY = HAPPINESS" style="font-family: 'Inter', sans-serif;"></span>
                 <span class="type-writer" data-text="المال = السعادة"></span>
             </h3>
         </section>
 
-        <!-- STRATEGY VIDEO PLAYER -->
+        <!-- STRATEGY VIDEO PLAYER 2 mat YouTube Ikon a Watch Now Knäppchen -->
         <section class="py-24 relative overflow-hidden text-center bg-black/40 backdrop-blur-sm">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black transition-all hover:scale-[1.01]">
-                    <video class="w-full aspect-video object-cover" controls playsinline loop>
+            <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
+                <!-- Video Container -->
+                <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black w-full">
+                    <!-- Zidna l'poster hna l video 2 -->
+                    <video id="strategy-video" class="w-full aspect-video object-cover" poster="https://i.postimg.cc/ZYf6nHXc/IMG-9455.png" preload="metadata" controls playsinline loop>
                         <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
                     </video>
+                    
+                    <!-- YouTube Play Ikon Overlay -->
+                    <div id="strategy-play-overlay" class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none transition-opacity duration-300">
+                        <div class="w-20 h-16 md:w-24 md:h-16 bg-red-600 rounded-[14px] flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.7)] cursor-pointer pointer-events-auto hover:bg-red-500 transition-colors" onclick="document.getElementById('strategy-video').play()">
+                            <i data-lucide="play" class="fill-white text-white w-8 h-8 ml-1"></i>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- WATCH NOW Knäppchen fir de Strategy Video -->
+                <button onclick="document.getElementById('strategy-video').play()" class="mt-6 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all px-8 py-2.5 rounded-full font-bold text-sm tracking-widest flex items-center gap-3">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i> WATCH NOW
+                </button>
             </div>
         </section>
 
-        <!-- Résultats (6 Photos + LABELS) -->
+        <!-- Resultater -->
         <section id="resultats" class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left border-b border-white/10 pb-8">
@@ -493,7 +516,6 @@
                 <button onclick="showCGV()" class="text-[10px] text-amber-500/50 hover:text-amber-500 font-black uppercase underline decoration-amber-500/30 mb-6">Conditions Générales Mamoun Company</button>
                 <p class="text-[10px] text-slate-600 font-black uppercase mb-6 opacity-40">© 2026 MAMOUN GOLD XAUUSD. Casablanca, Maroc.</p>
                 
-                <!-- Avertissement (Trading involves risks) -->
                 <div class="max-w-2xl mx-auto border-t border-white/10 pt-6">
                     <p class="text-[9px] text-slate-500 uppercase tracking-widest leading-relaxed">
                         Trading involves risks. Mamoun Company does not provide financial advice.
@@ -503,17 +525,16 @@
         </footer>
     </div>
 
-    <!-- Page CGV -->
+    <!-- CGV Säit -->
     <div id="cgv-page" class="page min-h-screen bg-black/95 flex flex-col items-center justify-center py-24" style="display:none">
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
-                <h3 class="text-3xl md:text-5xl font-black uppercase italic gold-gradient tracking-tighter">الشروط والأحكام</h3>
+                <h3 class="text-3xl md:text-5xl font-black uppercase italic gold-gradient tracking-tighter" style="font-family: 'Cairo', sans-serif;">الشروط والأحكام</h3>
                 <button onclick="showMain()" class="bg-white/10 hover:bg-white/20 text-amber-500 px-6 py-3 rounded-2xl font-black uppercase text-xs flex items-center gap-2">Retour <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
             </div>
             <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
-                <!-- Arabic Terms Full (5 points) -->
                 <div class="glass-card p-10 md:p-14 border border-white/10 text-right shadow-2xl" dir="rtl">
-                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 uppercase">الشروط والأحكام</h4>
+                    <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 uppercase" style="font-family: 'Cairo', sans-serif;">الشروط والأحكام</h4>
                     <div class="space-y-8 text-slate-300 arabic-text">
                         <p><strong class="text-white">1. طبيعة الخدمة:</strong> حنا كنقدمو استشارات تعليمية وتوصيات ديال التداول على الذهب. حنا ماشي بنكة ولا مؤسسة مالية، والخدمات ديالنا غرضها تعليمي وفني فقط.</p>
                         <p><strong class="text-white">2. الربح والخسارة:</strong> هاد الدومين فيه الربح وفيه الخسارة بحال أي بيزنيس. النتائج اللي دازت ماشي ضمانة للربح فالمستقبل، والذهب سوق متقلب كيحتاج الحذر.</p>
@@ -522,7 +543,6 @@
                         <p><strong class="text-white">5. السرية والمحتوى:</strong> ممنوع منعا كليا تبارطاجي المحتوى ديال الفيديوهات ولا التوصيات اللي فالمجموعة مع شي حد برا لݣروب.</p>
                     </div>
                 </div>
-                <!-- French Terms Full (5 points restored) -->
                 <div class="glass-card p-10 md:p-14 border border-white/10 text-left shadow-2xl">
                     <h4 class="text-amber-500 text-2xl font-black mb-10 border-b border-amber-500/30 pb-4 uppercase italic">CONDITIONS GÉNÉRALES</h4>
                     <div class="space-y-8 text-slate-300">
@@ -537,7 +557,7 @@
         </div>
     </div>
 
-    <!-- Modals -->
+    <!-- Modaler an Notifikatiounen -->
     <div id="img-modal" class="modal-overlay" onclick="closeImgModal()">
         <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full"><i data-lucide="x" class="w-8 h-8"></i></button>
         <img id="modal-img-src" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="">
@@ -547,7 +567,7 @@
     <script>
         lucide.createIcons();
 
-        // Autoplay loop video script with force loop fallback
+        // Autoplay Hannergrondvideo starten wann d'Säit lued
         window.onload = () => { 
             const video = document.getElementById('bgVideo');
             if(video) {
@@ -559,7 +579,7 @@
             }
         };
 
-        // SPEED-OPTIMIZED TYPING EFFECT
+        // Schnell Schreifmaschinn Effekt
         const typeWriterEffect = async (el) => {
             const text = el.getAttribute('data-text');
             if (!text) return;
@@ -576,7 +596,7 @@
                         el.classList.add('done');
                         resolve();
                     }
-                }, 20); // Very fast typing effect (20ms)
+                }, 20); // Ganz séier (20ms)
             });
         };
 
@@ -598,7 +618,26 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.type-writer').forEach(tw => observer.observe(tw));
 
-        // NAV & PAYMENT
+        // Video Play Logik fir d'Overlay ze verstoppen wann et spillt
+        function setupVideoOverlay(videoId, overlayId) {
+            const vid = document.getElementById(videoId);
+            const overlay = document.getElementById(overlayId);
+            if(vid && overlay) {
+                vid.addEventListener('play', () => {
+                    overlay.style.opacity = '0';
+                    overlay.style.pointerEvents = 'none';
+                });
+                vid.addEventListener('pause', () => {
+                    overlay.style.opacity = '1';
+                    overlay.style.pointerEvents = 'auto';
+                });
+            }
+        }
+        
+        setupVideoOverlay('explainer-video', 'play-overlay');
+        setupVideoOverlay('strategy-video', 'strategy-play-overlay');
+
+        // Navigatioun an Bezuelung
         function showCGV() { document.getElementById('main-page').style.display = 'none'; document.getElementById('cgv-page').style.display = 'flex'; window.scrollTo(0,0); }
         function showMain() { document.getElementById('cgv-page').style.display = 'none'; document.getElementById('main-page').style.display = 'block'; window.scrollTo(0,0); }
 
@@ -623,5 +662,6 @@
     </script>
 </body>
 </html>
+
 
 

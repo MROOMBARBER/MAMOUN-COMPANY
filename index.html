@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Indexatioun -->
+    <!-- SEO & Indexation -->
     <title>MAMOUN GOLD - Mamoun Company | King of XAUUSD Trading Maroc</title>
     <meta name="description" content="MAMOUN GOLD par Mamoun Company : La référence n°1 du Trading Maroc. Spécialiste Mamoun Maroc Trading sur l'or (XAUUSD). Signaux VIP, gestion de compte et formation.">
     <meta name="keywords" content="mamoun gold, mamoun company, trading maroc, mamoun maroc trading, mamoungold, trading or maroc, xauusd maroc, signaux trading maroc, expert trading maroc">
@@ -36,13 +36,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Lucide Ikonen -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #e2e8f0; position: relative; }
         
-        /* Hannergrondvideo Astellungen */
+        /* Background Video Settings */
         .video-background {
             position: fixed;
             top: 0; left: 0;
@@ -68,7 +68,7 @@
             z-index: -9;
         }
 
-        /* Marquee Animatioun */
+        /* Marquee Animation */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -95,11 +95,11 @@
         .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-blur: 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 40px; }
         .arabic-text { font-size: 1.15rem; line-height: 1.8; font-family: 'Cairo', sans-serif; }
         
-        /* Schreifmaschinn Effekt */
+        /* Typewriter Effect */
         .type-writer { border-right: 3px solid #f59e0b; display: inline-block; min-height: 1.2em; white-space: pre-wrap; font-family: 'Cairo', sans-serif;}
         .type-writer.done { border-right: none; }
         
-        /* Knäppchen Animatiounen */
+        /* Button Animations */
         @keyframes pulse-glow {
             0% { transform: scale(1); }
             50% { transform: scale(1.04); }
@@ -134,7 +134,7 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Globale Hannergrondvideo -->
+    <!-- Global Background Video -->
     <div class="video-background">
         <video id="bgVideo" autoplay muted loop playsinline>
             <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
@@ -142,7 +142,7 @@
     </div>
     <div class="video-overlay"></div>
 
-    <!-- Bezuelungsmodal mat Bankdetailer -->
+    <!-- Payment Modal -->
     <div id="payment-modal" class="modal-overlay" onclick="closePayment()">
         <div class="payment-card shadow-2xl" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center mb-6 border-b border-white/5 pb-4">
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-            <!-- Warnung -->
+            <!-- Warning -->
             <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-2xl mb-8 text-center shadow-lg">
                 <p class="text-red-500 font-black text-sm" style="font-family: 'Cairo', sans-serif;" dir="rtl">⚠️ المرجو عدم إرسال رسالة على الواتساب إذا لم يتم إتمام عملية الدفع. شكراً.</p>
             </div>
@@ -189,7 +189,7 @@
     </div>
 
     <div id="main-page" class="page">
-        <!-- Ticker uewen -->
+        <!-- Ticker Top -->
         <div class="bg-red-600 text-white py-2.5 overflow-hidden whitespace-nowrap fixed top-0 w-full z-[60]">
             <div class="animate-marquee font-black text-[11px] uppercase tracking-[0.2em] flex items-center space-x-12">
                 <span>MAMOUN COMPANY - MAMOUN GOLD 👑</span>
@@ -199,7 +199,7 @@
             </div>
         </div>
 
-        <!-- Navigatioun -->
+        <!-- Navigation -->
         <nav id="nav" class="fixed w-full z-50 top-10 py-6 transition-all duration-300">
             <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <div class="flex items-center space-x-3">
@@ -217,7 +217,7 @@
             </div>
         </nav>
 
-        <!-- Packs Sektioun -->
+        <!-- Packs Section -->
         <section id="packs" class="relative pt-52 pb-24">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <!-- Hero Text -->
@@ -229,7 +229,7 @@
                     </h2>
                 </div>
                 
-                <!-- Motivatiouns Noriicht -->
+                <!-- Motivation Message -->
                 <div class="max-w-3xl mx-auto mb-16 bg-white/5 border border-white/10 p-6 rounded-[30px] backdrop-blur-md shadow-2xl relative overflow-hidden group">
                     <div class="absolute inset-0 bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors"></div>
                     <p class="text-slate-200 text-lg md:text-xl font-medium leading-relaxed arabic-text relative z-10" dir="rtl">
@@ -239,7 +239,7 @@
                     </p>
                 </div>
 
-                <!-- Video 1 mat neiem Poster -->
+                <!-- Video 1 -->
                 <div class="max-w-4xl mx-auto mb-20 text-center flex flex-col items-center">
                     <h3 class="text-3xl font-black text-white mb-6 underline decoration-amber-500 decoration-4" style="font-family: 'Cairo', sans-serif;">الشرح</h3>
                     
@@ -260,41 +260,57 @@
                     </button>
                 </div>
 
-                <!-- Déi 3 Packs -->
-                <div class="grid md:grid-cols-3 gap-8 mt-12">
-                    <!-- 1. PACK PRO -->
-                    <div class="glass-card p-8 flex flex-col relative hover:border-sky-400 transition-all shadow-xl group">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky-400 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-center gap-1.5">
+                <!-- 4 Packs Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                    
+                    <!-- 1. PACK CADEAU (Navo Pack) -->
+                    <div class="glass-card border-2 border-fuchsia-500 p-6 lg:p-8 flex flex-col relative hover:border-fuchsia-400 shadow-[0_0_25px_rgba(217,70,239,0.3)] transition-all group">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-fuchsia-500 text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(217,70,239,0.5)] flex items-center gap-1.5 whitespace-nowrap">
+                            <i data-lucide="gift" class="w-3 h-3"></i> PROMOTION
+                        </div>
+                        <h4 class="text-xl lg:text-2xl font-black mb-1 uppercase tracking-tighter text-fuchsia-500">PACK CADEAU 🎁</h4>
+                        <div class="text-fuchsia-500 font-black text-2xl xl:text-3xl mb-6">1400 DH <span class="text-slate-500 text-[10px] xl:text-xs font-bold uppercase block xl:inline mt-1">/ 2 ans</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
+                            <li class="flex items-start gap-3 font-black text-emerald-400 uppercase italic leading-snug">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 shrink-0 mt-0.5"></i> 10 LAWLIN AYAKHDO 10.000 dh ✅
+                            </li>
+                        </ul>
+                        <button onclick="openPayment('Pack Cadeau (1400 DH)')" class="btn-animated bg-fuchsia-500 text-white py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(217,70,239,0.4)] hover:bg-fuchsia-400 hover:shadow-[0_0_30px_rgba(217,70,239,0.6)]">خذ العرض دابا 🎁</button>
+                    </div>
+
+                    <!-- 2. PACK PRO -->
+                    <div class="glass-card p-6 lg:p-8 flex flex-col relative hover:border-sky-400 transition-all shadow-xl group">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky-400 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-center gap-1.5 whitespace-nowrap">
                             <i data-lucide="flame" class="w-3 h-3"></i> BESTSELLER
                         </div>
-                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK PRO</h4>
-                        <div class="text-sky-400 font-black text-3xl mb-6">1700 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 2 ans</span></div>
+                        <h4 class="text-xl lg:text-2xl font-black mb-1 uppercase tracking-tighter">PACK PRO</h4>
+                        <div class="text-sky-400 font-black text-2xl xl:text-3xl mb-6">1700 DH <span class="text-slate-500 text-[10px] xl:text-xs font-bold uppercase block xl:inline mt-1">/ 2 ans</span></div>
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Signals Group VIP</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5"></i> Création du Compte</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5 shrink-0"></i> Signals Group VIP</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sky-400 w-5 h-5 shrink-0"></i> Création du Compte</li>
                         </ul>
                         <button onclick="openPayment('Pack Pro (1700 DH)')" class="btn-animated bg-sky-400 text-black py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:bg-sky-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]">الدخول للمستوى العالي 🚀</button>
                     </div>
 
-                    <!-- 2. ACCOUNT MANAGEMENT -->
-                    <div class="glass-card border-2 border-red-600/50 p-8 flex flex-col hover:border-red-500 shadow-xl transition-all">
-                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter text-red-500">ACCOUNT MANAGEMENT</h4>
-                        <div class="text-red-500 font-black text-3xl mb-6">3500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ 6 mois</span></div>
+                    <!-- 3. ACCOUNT MANAGEMENT -->
+                    <div class="glass-card border-2 border-red-600/50 p-6 lg:p-8 flex flex-col hover:border-red-500 shadow-xl transition-all">
+                        <h4 class="text-xl lg:text-2xl font-black mb-1 uppercase tracking-tighter text-red-500">ACCOUNT MANAGEMENT</h4>
+                        <div class="text-red-500 font-black text-2xl xl:text-3xl mb-6">3500 DH <span class="text-slate-500 text-[10px] xl:text-xs font-bold uppercase block xl:inline mt-1">/ 6 mois</span></div>
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
-                            <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5"></i> Capital Min : 500$</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5"></i> Gestion Pro Active</li>
+                            <li class="flex items-center gap-3 font-black text-red-500 uppercase italic tracking-tighter"><i data-lucide="shield-check" class="w-5 h-5 shrink-0"></i> Capital Min : 500$</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-red-500 w-5 h-5 shrink-0"></i> Gestion Pro Active</li>
                         </ul>
                         <button onclick="openPayment('Account Management (3500 DH)')" class="btn-animated bg-red-600 text-white py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:bg-red-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.6)]">أنا جاهز للاستثمار دابا 👇</button>
                     </div>
 
-                    <!-- 3. PACK VIP -->
-                    <div class="glass-card border-2 border-amber-500 p-8 flex flex-col relative shadow-2xl transition-all hover:scale-[1.02]">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">OFFRE ELITE</div>
-                        <h4 class="text-2xl font-black mb-1 uppercase tracking-tighter">PACK VIP</h4>
-                        <div class="text-amber-500 font-black text-3xl mb-6">2500 DH <span class="text-slate-500 text-xs font-bold uppercase">/ À vie</span></div>
+                    <!-- 4. PACK VIP -->
+                    <div class="glass-card border-2 border-amber-500 p-6 lg:p-8 flex flex-col relative shadow-2xl transition-all hover:scale-[1.02]">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg whitespace-nowrap">OFFRE ELITE</div>
+                        <h4 class="text-xl lg:text-2xl font-black mb-1 uppercase tracking-tighter">PACK VIP</h4>
+                        <div class="text-amber-500 font-black text-2xl xl:text-3xl mb-6">2500 DH <span class="text-slate-500 text-[10px] xl:text-xs font-bold uppercase block xl:inline mt-1">/ À vie</span></div>
                         <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-left text-slate-300">
-                            <li class="flex items-center gap-3"><i data-lucide="star" class="text-amber-500 w-5 h-5"></i> Signals Lifetime 👑</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5"></i> Assistance Privée 24/7</li>
+                            <li class="flex items-center gap-3"><i data-lucide="star" class="text-amber-500 w-5 h-5 shrink-0"></i> Signals Lifetime 👑</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-500 w-5 h-5 shrink-0"></i> Assistance Privée 24/7</li>
                         </ul>
                         <button onclick="openPayment('Pack VIP (2500 DH)')" class="btn-animated bg-amber-500 text-black py-4 rounded-xl font-black text-sm lg:text-base shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]">انا جاهز لل VIP 💸</button>
                     </div>
@@ -302,7 +318,7 @@
             </div>
         </section>
 
-        <!-- Erklärung wéi et funktionéiert -->
+        <!-- How It Works Section -->
         <section id="how-it-works" class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-right mb-16" dir="rtl">
@@ -352,7 +368,7 @@
             </div>
         </section>
 
-        <!-- Firwat ons? -->
+        <!-- Why Us? -->
         <section class="py-24 relative overflow-hidden bg-black/40 backdrop-blur-sm">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16" dir="rtl">
@@ -412,7 +428,7 @@
             </div>
         </section>
 
-        <!-- Firwat Gold -->
+        <!-- Why Gold -->
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 glass-card rounded-[40px] p-8 text-right shadow-2xl" dir="rtl">
@@ -441,17 +457,14 @@
             </h3>
         </section>
 
-        <!-- STRATEGY VIDEO PLAYER 2 mat YouTube Ikon a Watch Now Knäppchen -->
+        <!-- Video 2 -->
         <section class="py-24 relative overflow-hidden text-center bg-black/40 backdrop-blur-sm">
             <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
-                <!-- Video Container -->
                 <div class="relative rounded-[40px] overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-black w-full">
-                    <!-- Zidna l'poster hna l video 2 -->
                     <video id="strategy-video" class="w-full aspect-video object-cover" poster="https://i.postimg.cc/ZYf6nHXc/IMG-9455.png" preload="metadata" controls playsinline loop>
                         <source src="https://files.catbox.moe/en77r7.MP4" type="video/mp4">
                     </video>
                     
-                    <!-- YouTube Play Ikon Overlay -->
                     <div id="strategy-play-overlay" class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none transition-opacity duration-300">
                         <div class="w-20 h-16 md:w-24 md:h-16 bg-red-600 rounded-[14px] flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.7)] cursor-pointer pointer-events-auto hover:bg-red-500 transition-colors" onclick="document.getElementById('strategy-video').play()">
                             <i data-lucide="play" class="fill-white text-white w-8 h-8 ml-1"></i>
@@ -459,14 +472,13 @@
                     </div>
                 </div>
                 
-                <!-- WATCH NOW Knäppchen fir de Strategy Video -->
                 <button onclick="document.getElementById('strategy-video').play()" class="mt-6 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all px-8 py-2.5 rounded-full font-bold text-sm tracking-widest flex items-center gap-3">
                     <i data-lucide="play-circle" class="w-5 h-5"></i> WATCH NOW
                 </button>
             </div>
         </section>
 
-        <!-- Resultater -->
+        <!-- Resultats -->
         <section id="resultats" class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-left border-b border-white/10 pb-8">
@@ -525,7 +537,7 @@
         </footer>
     </div>
 
-    <!-- CGV Säit -->
+    <!-- CGV Page -->
     <div id="cgv-page" class="page min-h-screen bg-black/95 flex flex-col items-center justify-center py-24" style="display:none">
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
@@ -557,7 +569,7 @@
         </div>
     </div>
 
-    <!-- Modaler an Notifikatiounen -->
+    <!-- Modals -->
     <div id="img-modal" class="modal-overlay" onclick="closeImgModal()">
         <button class="absolute top-6 right-6 text-white bg-white/10 p-3 rounded-full"><i data-lucide="x" class="w-8 h-8"></i></button>
         <img id="modal-img-src" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="">
@@ -567,7 +579,7 @@
     <script>
         lucide.createIcons();
 
-        // Autoplay Hannergrondvideo starten wann d'Säit lued
+        // Autoplay background video
         window.onload = () => { 
             const video = document.getElementById('bgVideo');
             if(video) {
@@ -579,7 +591,7 @@
             }
         };
 
-        // Schnell Schreifmaschinn Effekt
+        // Typewriter Effect
         const typeWriterEffect = async (el) => {
             const text = el.getAttribute('data-text');
             if (!text) return;
@@ -596,7 +608,7 @@
                         el.classList.add('done');
                         resolve();
                     }
-                }, 20); // Ganz séier (20ms)
+                }, 20);
             });
         };
 
@@ -618,7 +630,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.type-writer').forEach(tw => observer.observe(tw));
 
-        // Video Play Logik fir d'Overlay ze verstoppen wann et spillt
+        // Video Play Logic 
         function setupVideoOverlay(videoId, overlayId) {
             const vid = document.getElementById(videoId);
             const overlay = document.getElementById(overlayId);
@@ -637,7 +649,7 @@
         setupVideoOverlay('explainer-video', 'play-overlay');
         setupVideoOverlay('strategy-video', 'strategy-play-overlay');
 
-        // Navigatioun an Bezuelung
+        // Navigation
         function showCGV() { document.getElementById('main-page').style.display = 'none'; document.getElementById('cgv-page').style.display = 'flex'; window.scrollTo(0,0); }
         function showMain() { document.getElementById('cgv-page').style.display = 'none'; document.getElementById('main-page').style.display = 'block'; window.scrollTo(0,0); }
 
@@ -662,6 +674,5 @@
     </script>
 </body>
 </html>
-
 
 
